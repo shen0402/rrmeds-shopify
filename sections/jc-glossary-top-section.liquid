@@ -1,0 +1,27 @@
+
+
+<div class="vertical-section grey wf-section">
+  <div class="vertical-section-inner glossary">
+
+    <p class="paragraph-text">{{section.settings.content_text}}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Top Content",
+  "settings": [
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "R&R CBD Glossary",
+         "label": "Heading Top"
+      },
+      {
+         "type": "richtext",
+         "id": "content_text",
+         "label": "Content"
+      }
+  ] 
+}
+{% endschema %}

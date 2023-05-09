@@ -1,0 +1,41 @@
+<!-- /templates/customers/register.liquid -->
+<div class="jc-create-page-wrapper">
+<div class="grid">
+
+  <div class="w-container">
+
+
+    <div class="form-vertical create-customer">
+      {% form 'create_customer' %}
+      <h1 class="jc-main-heading center">Create Account</h1>
+        {{ form.errors | default_errors }}
+
+        <label for="FirstName" class="hidden-label">{{ 'customer.register.first_name' | t }}</label>
+        <input type="text" name="customer[first_name]" id="FirstName" class="jc-form-input-login w-input" placeholder="{{ 'customer.register.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+
+        <label for="LastName" class="hidden-label">{{ 'customer.register.last_name' | t }}</label>
+        <input type="text" name="customer[last_name]" id="LastName" class="jc-form-input-login w-input" placeholder="{{ 'customer.register.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+
+        <label for="Email" class="hidden-label">{{ 'customer.register.email' | t }}</label>
+        <input type="email" name="customer[email]" id="Email" class="jc-form-input-login w-input{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.register.email' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+
+        <label for="CreatePassword" class="hidden-label">{{ 'customer.register.password' | t }}</label>
+        <input type="password" name="customer[password]" id="CreatePassword" class="jc-form-input-login w-input{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.register.password' | t }}">
+
+        <p class="text-center">
+          <div class="jc-medium-btn-section">
+            <input type="submit" value="{{ 'customer.register.submit' | t }}" class="jc-medium-btn w-button">
+          </div>
+          
+        </p>
+        
+
+      {% endform %}
+    </div>
+    <div class="jc-account-page-bottom-link-wrapper">
+      <p class="jc-account-page-bottom-link-text">Already have an account? <a href="/account/login" class="paragraph-link"><strong>LOG IN</strong></a></p>
+    </div>
+  </div>
+
+</div>
+</div>

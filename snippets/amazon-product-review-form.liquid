@@ -1,0 +1,78 @@
+<style type="text/css">
+  #amazon-review-form{
+    display:none;
+    max-width:500px;
+    margin:20px 0px;
+  }
+</style>
+{% assign custom_reviews_allowed = shop.metafields["amazonproductreviews"].custom_reviews_allowed %}
+{% assign showForm = true %}
+{% assign formMsg = "" %}
+{% if custom_reviews_allowed == "loggedin" %}
+  {% assign showForm = false %}
+  {% assign formMsg = "You Must be logged in to post a Review." %}
+  {% if customer %}
+    {% assign showForm = true %}
+	{% assign formMsg = "" %}
+  {% endif %}
+{% elsif custom_reviews_allowed == "purchaseonly" %}
+  {% assign showForm = false %}
+  {% assign formMsg = "You Must purchase this Product before to post a Review." %}
+  {% if customer %}
+    {% paginate customer.orders by customer.orders_count %}
+      {% if customer.orders.size != 0 %}
+        {% assign productFound = false %}
+        {% for order in customer.orders %}
+          {% for line_item in order.line_items %}
+            {% if line_item.product.id == product.id %}
+              {% assign productFound = true %}
+              {% assign showForm = true %}
+              {% assign formMsg = "" %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% if productFound == true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endpaginate %}
+  {% endif %}
+{% endif %}
+
+<div id="amazon-review-form">
+  {% if showForm == true %}
+  <div class="error"></div>
+  <div class="success"></div>
+  <form action="javascript:void(0);" method="post">
+    <div class="review-form-row">
+      <label>Name</label>
+      <input type="text" id="amazon-form-name-field" value="{% if customer %}{{customer.name}}{% endif %}" />
+    </div>
+    <div class="review-form-row">
+      <label>Review Star</label>
+      <select id="amazon-form-review-star-field">
+        <option value="5" selected="selected">5 Star</option>
+        <option value="4">4 Star</option>
+        <option value="3">3 Star</option>
+        <option value="2">2 Star</option>
+        <option value="1">1 Star</option>
+      </select>
+    </div>
+    <div class="review-form-row">
+      <label>Review Title</label>
+      <input type="text" id="amazon-form-review-title-field" />
+    </div>
+    <div class="review-form-row">
+      <label>Review Body</label>
+      <textarea id="amazon-form-review-body-field"></textarea>
+    </div>
+    <div class="review-form-button-row">
+      <span class="submit-amazon-review"><i class="fa fa-spinner fa-spin"></i></span>
+      <input type="submit" id="amazon-form-submit-review-button" value="Submit Review" />
+    </div>
+  </form>
+  {% else %}
+  <div style="background:#C0363A;display:block;padding:10px 20px;color:#FFF;margin:10px 0px;">{{ formMsg }}</div>
+  {% endif %}
+</div>

@@ -1,0 +1,31 @@
+
+<div class="mid-content-block-careers mid-content-block-careers-alt">
+  
+  <h3 class="mid-heading-careers">{{section.settings.heading_text}}</h3>
+  <div class="mid-content-careers-rte">
+    {{section.settings.content_text}}
+  </div>
+
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Content Section 2",
+  "settings": [
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "About R&R Medicinals",
+         "label": "Heading Top"
+      },
+      {
+         "type": "richtext",
+         "id": "content_text",
+         "label": "Content"
+      }
+  ] 
+}
+{% endschema %}

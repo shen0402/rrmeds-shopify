@@ -1,0 +1,62 @@
+<!-- /templates/customers/activate_account.liquid -->
+{% comment %}
+<div class="grid">
+  <div class="grid__item large--one-third push--large--one-third text-center">
+
+    <header class="section-header">
+      <h1>{{ 'customer.activate_account.title' | t }}</h1>
+      <p>{{ 'customer.activate_account.subtext' | t }}</p>
+      <hr class="hr--small">
+    </header>
+
+    <div class="form-vertical">
+      {% form 'activate_customer_password' %}
+
+        {{ form.errors | default_errors }}
+
+        <label for="CustomerPassword" class="hidden-label">{{ 'customer.activate_account.password' | t }}</label>
+        <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full" placeholder="{{ 'customer.activate_account.password' | t }}">
+
+        <label for="CustomerPasswordConfirmation" class="hidden-label">{{ 'customer.activate_account.password_confirm' | t }}</label>
+        <input type="password" value="" name="customer[password_confirmation]" id="CustomerPasswordConfirmation" class="input-full" placeholder="{{ 'customer.activate_account.password_confirm' | t }}">
+
+        <input type="submit" class="btn btn--full" value="{{ 'customer.activate_account.submit' | t }}">
+        <input type="submit" class="btn--secondary btn--full" name="decline" value="{{ 'customer.activate_account.cancel' | t }}">
+      {% endform %}
+    </div>
+
+  </div>
+</div>
+{% endcomment %}
+
+<div class="jc-login-page-wrapper">
+  <div class="grid">
+    <div class="w-container">
+
+
+      <div class="form-vertical">
+        {% form 'activate_customer_password' %}
+          <h1 class="jc-section-heading green">Activate Account</h1>
+          {{ form.errors | default_errors }}
+
+          <label for="CustomerPassword" class="hidden-label">{{ 'customer.activate_account.password' | t }}</label>
+          <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full jc-form-input-login w-input" placeholder="{{ 'customer.activate_account.password' | t }}">
+
+          <label for="CustomerPasswordConfirmation" class="hidden-label">{{ 'customer.activate_account.password_confirm' | t }}</label>
+          <input type="password" value="" name="customer[password_confirmation]" id="CustomerPasswordConfirmation" class="input-full jc-form-input-login w-input" placeholder="{{ 'customer.activate_account.password_confirm' | t }}">
+
+          <p class="jc-btn-wrapper-login">
+            <div class="two-btn-wrapper">
+              <input type="submit" class="jc-medium-btn less-padding w-button" value="{{ 'customer.activate_account.submit' | t }}">
+              <input type="submit" class="jc-medium-btn less-padding w-button" name="decline" value="{{ 'customer.activate_account.cancel' | t }}">
+            </div>
+          </p>
+
+        {% endform %}
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

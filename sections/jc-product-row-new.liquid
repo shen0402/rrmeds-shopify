@@ -1,0 +1,181 @@
+
+
+<div class="jc-products-section-row less-margin">
+    {% for product in collections.frontpage.products limit:6 %}
+      {% assign shortDescription = product.metafields.shortDescription %}
+      {% assign key = 'description' %}
+      {% if product.id == 4453931843637 or product.id == 3775015878709 %}
+      
+        {% assign jc_custom_url = '/collections/tinctures' %}
+        {% assign jc_custom_title = 'CBD Tinctures' %} 
+
+        {% elsif product.id == 4502500573237 %}
+
+        {% assign jc_custom_url = '/collections/pet-products' %}
+        {% assign jc_custom_title = 'CBD Pet Products' %} 
+
+        {% comment %}
+        thc free tincture - 6683040284870
+        {% endcomment %}
+        {% elsif product.id == 6683040284870 %}
+
+        {% assign jc_custom_url = '/collections/thc-free-products' %}
+        {% assign jc_custom_title = 'THC-Free CBD' %} 
+
+
+        {% comment %}
+          CBD Softgels - 3775056216117 
+        {% endcomment %}
+        {% elsif product.id == 3775056216117 %}
+
+          {% assign jc_custom_url = '/collections/softgels' %}
+          {% assign jc_custom_title = 'CBD Softgels' %} 
+
+          {% comment %}
+          Cream - 4447123537973
+          {% endcomment %}
+
+        {% elsif product.id == 4447123537973 %}
+
+          {% assign jc_custom_url = '/collections/gummies' %}
+          {% assign jc_custom_title = 'CBD Gummies' %} 
+
+        {% else %}
+
+        {% assign jc_custom_url = product.url %}
+        {% assign jc_custom_title = product.title %}
+
+      {% endif %}
+
+
+      {%- assign iteration_number = forloop.index -%}
+
+      <div class="jc-products-section-col">
+        <div class="jc-product-section-col-inner">
+          <a href="{{ jc_custom_url }}" class="jc-product-section-overlay-link w-inline-block">
+          </a>
+            <div class="jc-product-section-img-wrapper home jc-product-section-img-wrapper-home-{{iteration_number}}"></div>
+            <div class="jc-product-section-bottom-wrapper">
+
+
+            <div class="product-title-wrapper">
+            <h4 class="jc-product-section-heading no-margin">{{ jc_custom_title }}</h4>
+            
+
+            {% comment %}
+            <div class="jc-product-section-text">{{ shortDescription.description }}</div>
+            {% endcomment %}
+            <div class="jc-medium-btn-section">
+              <a href="{{ jc_custom_url }}" class="jc-small-btn product-row w-button">Shop Now</a>
+            </div>
+            
+            {%comment%}
+            <div class="jc-product-section-btn-wrapper">
+              <a href="{{ jc_custom_url }}" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn">
+                <p class="jc-product-section-link-text">Shop Now</p>
+                <div class="jc-btn-breaker-wrapper">
+                  <div class="jc-product-section-link-breaker"></div>
+                  <div class="jc-product-section-link-breaker-expand"></div>
+                </div>
+              </a>
+            </div>
+            {%endcomment%}
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+    {% endfor %}
+
+
+
+    <div class="jc-products-section-col">
+      <div class="jc-product-section-col-inner">
+        <a href="#" class="jc-product-section-overlay-link w-inline-block delta-9-btn" target="_blank">
+        </a>
+          <div class="jc-product-section-img-wrapper jc-product-section-img-wrapper-home-delta-9"></div>
+          <div class="jc-product-section-bottom-wrapper">
+
+            <div class="product-title-wrapper">
+              <h4 class="jc-product-section-heading no-margin">Delta-9 THC</h4>
+              <div class="jc-medium-btn-section"><a href="#" class="jc-small-btn w-button delta-9-btn" data-ix="shop-btn" target="_blank" >Shop Now at summit</a></div>
+  
+              {%comment%}
+              <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+                <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+              </a>
+              {%endcomment%}
+  
+            </div>
+
+          {%comment%}
+            <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+              <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+            </a>
+          {%endcomment%}
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="jc-products-section-col">
+      <div class="jc-product-section-col-inner">
+        <a href="#" class="jc-product-section-overlay-link w-inline-block delta-9-btn" target="_blank">
+        </a>
+          <div class="jc-product-section-img-wrapper jc-product-section-img-wrapper-home-hhc"></div>
+          <div class="jc-product-section-bottom-wrapper">
+
+            <div class="product-title-wrapper">
+              <h4 class="jc-product-section-heading no-margin">HHC</h4>
+              <div class="jc-medium-btn-section"><a href="#" class="jc-small-btn w-button delta-9-btn" data-ix="shop-btn" target="_blank" >Shop Now at summit</a></div>
+  
+              {%comment%}
+              <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+                <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+              </a>
+              {%endcomment%}
+  
+            </div>
+
+          {%comment%}
+            <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+              <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+            </a>
+          {%endcomment%}
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="jc-products-section-col">
+      <div class="jc-product-section-col-inner">
+        <a href="#" class="jc-product-section-overlay-link w-inline-block delta-8-btn" target="_blank">
+        </a>
+          <div class="jc-product-section-img-wrapper jc-product-section-img-wrapper-home-delta-8"></div>
+          <div class="jc-product-section-bottom-wrapper">
+
+
+          <div class="product-title-wrapper">
+            <h4 class="jc-product-section-heading no-margin">Delta-8 THC</h4>
+            <div class="jc-medium-btn-section"><a href="#" class="jc-small-btn w-button delta-8-btn" data-ix="shop-btn" target="_blank">Shop Now at summit</a></div>
+
+            {%comment%}
+            <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+              <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+            </a>
+            {%endcomment%}
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+</div>
+

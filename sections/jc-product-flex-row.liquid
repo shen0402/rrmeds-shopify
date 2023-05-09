@@ -1,0 +1,176 @@
+
+
+<div class="jc-products-flex-row test-flex-row {% if collection.id == 137309519925 %}jc-products-flex-row-left{% endif %}">
+  {% assign products = collection.products  %}
+    {% for product in products %}
+      {% assign shortDescription = product.metafields.shortDescription.description %}
+      
+      {% comment %}
+        Thc free tincture 6683040284870
+      {% endcomment %}
+      {% if product.id == 4453931843637 or product.id == 3775015878709 %}
+      
+        {% assign jc_custom_url = '/collections/tinctures' %}
+        {% assign jc_custom_title = 'CBD Tinctures' %} 
+
+        {% elsif product.id == 4502500573237 %}
+
+        {% assign jc_custom_url = '/collections/pet-products' %}
+        {% assign jc_custom_title = 'CBD Pet Products' %}
+
+        {% elsif product.id == 6841769033926 %} 
+
+        {% assign jc_custom_url = '/collections/thc-free-products' %}
+        {% assign jc_custom_title = 'THC-Free CBD' %}
+
+
+        {% comment %}
+          CBD Softgels - 3775056216117 
+        {% endcomment %}
+        {% elsif product.id == 3775056216117 %}
+
+          {% assign jc_custom_url = '/collections/softgels' %}
+          {% assign jc_custom_title = 'CBD Softgels' %} 
+
+          {% comment %}
+          Gummies - 4447123537973
+          {% endcomment %}
+
+        {% elsif product.id == 4447123537973 %}
+
+          {% assign jc_custom_url = '/collections/gummies' %}
+          {% assign jc_custom_title = 'CBD Gummies' %} 
+        
+        {% else %}
+
+        {% assign jc_custom_url = product.url %}
+        {% assign jc_custom_title = product.title %}
+
+      {% endif %}
+
+      {% comment %}
+        CBD tincture unflavored - 4453931843637
+        CBD Pet Tincture - 3775058051125
+        THC softgels - 6683070496966
+        THC free tinctures - 6683040284870
+      {% endcomment %}
+      {% assign jc_hide_class = '' %}
+      {% if product.id == 4453931843637 or product.id == 3775058051125 or product.id == 6683070496966 or product.id == 6683040284870 %}
+        {% assign jc_hide_class = 'jc-product-custom-hide' %}
+      {% endif %}
+
+      {%- assign iteration_number = forloop.index -%}
+
+          <div class="jc-products-flex-col {{jc_hide_class}}">
+            <div class="jc-product-section-col-inner ">
+              <a href="{{ jc_custom_url }}" class="jc-product-section-overlay-link w-inline-block">
+              </a>
+              {% comment %}
+                3775056216117 - CBD Softgenls
+              {% endcomment %}
+              {% if product.id == 3775056216117 %}
+                    <div class="jc-product-section-img-wrapper" style="background-image: url('//cdn.shopify.com/s/files/1/0107/7431/5072/files/30mg_Softgels_4-29.jpg');"></div>
+                 {% comment %}
+                   4631247323189 - CBD Cream
+                 {% endcomment %}   
+                {% elsif product.id == 4631247323189 %}
+                    <div class="jc-product-section-img-wrapper" style="background-image: url('//cdn.shopify.com/s/files/1/0107/7431/5072/files/Cream_Thumb1-CBD-min.jpg');"></div>
+                    {% comment %}
+                    Gummies - 4447123537973
+                    {% endcomment %}
+                {% elsif product.id == 4447123537973 %}    
+                    <div class="jc-product-section-img-wrapper" style="background-image: url('//cdn.shopify.com/s/files/1/0107/7431/5072/files/25mg-FS-Organic-CBD-Gummies-with-label-min.jpg');"></div>
+                {% else %}
+                  <div class="jc-product-section-img-wrapper" style="background-image: url('{{ product.featured_image | img_url: '1024x' }}');"></div>
+              {% endif %}
+              <div class="jc-product-section-bottom-wrapper">
+                <div class="jc-product-section-breaker-wrapper">
+                  <div class="jc-product-section-hr"></div>
+                  <div class="jc-product-section-hr jc-product-section-sub-hr"></div>
+                </div>
+                <h4 class="jc-product-section-heading jc-product-section-heading-margin">{{jc_custom_title}}</h4>
+                {% comment %}
+                {% if shortDescription %}
+                  <div class="jc-product-section-text-collection-custom">{{ shortDescription }}</div>
+                {% endif %}
+                {% endcomment %}
+                <div class="jc-product-section-btn-wrapper">
+                  <a href="{{ jc_custom_url }}" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn">
+                    <p class="jc-product-section-link-text">Shop Now</p>
+                    <div class="jc-btn-breaker-wrapper">
+                      <div class="jc-product-section-link-breaker"></div>
+                      <div class="jc-product-section-link-breaker-expand"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        {% endfor %}
+
+        {% comment %}
+        137309519925 - all products
+        {% endcomment %}
+
+        {% if collection.id == 137309519925 %}
+          
+          <div class="jc-products-flex-col">
+            <div class="jc-product-section-col-inner">
+              <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-overlay-link w-inline-block" target="_blank">
+              </a>
+
+          <div class="jc-product-section-img-wrapper" style="background-image: url('//cdn.shopify.com/s/files/1/0107/7431/5072/files/SM_D8_thumb1.jpg');"></div>
+              <div class="jc-product-section-bottom-wrapper">
+                <div class="jc-product-section-breaker-wrapper">
+                  <div class="jc-product-section-hr"></div>
+                  <div class="jc-product-section-hr jc-product-section-sub-hr"></div>
+                </div>
+                <h4 class="jc-product-section-heading jc-product-section-heading-margin">Delta-8 THC</h4>
+                <div class="jc-product-section-btn-wrapper">
+                  <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+                    <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+                    <div class="jc-btn-breaker-wrapper">
+                      <div class="jc-product-section-link-breaker"></div>
+                      <div class="jc-product-section-link-breaker-expand"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="jc-products-flex-col">
+            <div class="jc-product-section-col-inner">
+              <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-product-section-overlay-link w-inline-block" target="_blank">
+              </a>
+
+          <div class="jc-product-section-img-wrapper" style="background-image: url('//cdn.shopify.com/s/files/1/0107/7431/5072/files/SM_D9_thumb1-min.jpg');"></div>
+              <div class="jc-product-section-bottom-wrapper">
+                <div class="jc-product-section-breaker-wrapper">
+                  <div class="jc-product-section-hr"></div>
+                  <div class="jc-product-section-hr jc-product-section-sub-hr"></div>
+                </div>
+                <h4 class="jc-product-section-heading jc-product-section-heading-margin">Delta-9 THC</h4>
+                <div class="jc-product-section-btn-wrapper">
+                  <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+                    <p class="jc-product-section-link-text summit">Shop at summitTHC.com</p>
+                    <div class="jc-btn-breaker-wrapper">
+                      <div class="jc-product-section-link-breaker"></div>
+                      <div class="jc-product-section-link-breaker-expand"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        {% endif %}
+
+</div>
+
+
+
+    

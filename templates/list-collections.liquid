@@ -1,0 +1,49 @@
+<!-- /templates/list-collections.liquid -->
+{% comment %}
+  The contents of the lists-collections.liquid template can be found in /sections/lists-collections-template.liquid
+
+
+{% section 'list-collections-template' %}
+{% endcomment %}
+
+<div class="jc-products-mid-wrapper">
+  
+  
+    <div class="w-container">
+      <div class="jc-products-heading-wrapper">
+        <h1 class="jc-section-heading">Our Products</h1>
+        <div class="jc-section-heading-hr"></div>
+        <div class="jc-section-heading-hr jc-section-heading-hr-bottom"></div>
+        <p class="jc-mid-text-products"> Organically Grown. Responsibly Priced. Unparalleled Service.</p>
+      </div>
+    </div>
+    
+    <div class="jc-container-large">
+
+      {% section 'jc-product-flex-row' %}
+
+    </div>
+    <div class="jc-disclaimer-wrapper-products">
+      {% section 'jc-disclaimer' %}
+    </div>
+    
+  </div>
+
+  {% section 'jc-newsletter' %}
+  <style type="text/css">
+
+  #jc-nav-link-products {
+
+    color:#7a0805;
+
+  }
+
+  @media (max-width: 991px) { 
+    #jc-nav-link-products {
+
+      color:#ffffff;
+
+    }
+  }
+
+  </style>

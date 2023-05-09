@@ -1,0 +1,79 @@
+
+<div class="jc-product-page-bottom-wrapper">
+    <div class="jc-container-large">
+      <div class="jc-product-page-bottom-heading-flex-row">
+        <div class="jc-product-page-bottom-flex-heading-col">
+          <div class="jc-product-page-bottom-heading-hr"></div>
+          <div class="jc-product-page-bottom-heading-hr jc-product-page-bottom-heading-hr-alt"></div>
+        </div>
+        <h3 class="jc-product-page-bottom-heading">Other Products</h3>
+        <div class="jc-product-page-bottom-flex-heading-col">
+          <div class="jc-product-page-bottom-heading-hr-right"></div>
+          <div class="jc-product-page-bottom-heading-hr-right jc-product-page-bottom-heading-hr-alt"></div>
+        </div>
+      </div>
+
+      <div class="jc-product-page-bottom-flex-row">
+        {% for product in collections["all-products"].products limit:3 %}
+        <div class="jc-product-page-bottom-flex-col">
+          <div class="jc-product-page-bottom-flex-col-inner">
+            <div class="jc-product-page-bottom-flex-col-overlay">
+              <div class="jc-product-page-bottom-flex-col-overlay-content-wrapper">
+                <h4 class="jc-product-page-bottom-flex-col-heading">{{product.title}}</h4>
+                
+                <a href="{{ product.url }}" class="jc-product-page-bottom-flex-col-link-block w-inline-block">
+                  <div><strong>View Product</strong></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% comment %}
+        <div class="jc-product-page-bottom-flex-col">
+          <div class="jc-product-page-bottom-flex-col-inner">
+            <div class="jc-product-page-bottom-flex-col-overlay">
+              <div class="jc-product-page-bottom-flex-col-overlay-content-wrapper">
+                <h4 class="jc-product-page-bottom-flex-col-heading">Softgels</h4>
+                
+                <a href="/products/softgels" class="jc-product-page-bottom-flex-col-link-block w-inline-block">
+                  <div><strong>View Product</strong></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jc-product-page-bottom-flex-col">
+          <div class="jc-product-page-bottom-flex-col-inner jc-product-page-bottom-flex-col-inner-2">
+            <div class="jc-product-page-bottom-flex-col-overlay">
+              <div class="jc-product-page-bottom-flex-col-overlay-content-wrapper">
+                <h4 class="jc-product-page-bottom-flex-col-heading">Pet Tinctures</h4>
+                
+                <a href="/products/pet-tinctures" class="jc-product-page-bottom-flex-col-link-block w-inline-block">
+                  <div><strong>View Product</strong></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jc-product-page-bottom-flex-col">
+          <div class="jc-product-page-bottom-flex-col-inner jc-product-page-bottom-flex-col-inner-3">
+            <div class="jc-product-page-bottom-flex-col-overlay">
+              <div class="jc-product-page-bottom-flex-col-overlay-content-wrapper">
+                <h4 class="jc-product-page-bottom-flex-col-heading">Tinctures</h4>
+                
+                <a href="/products/tinctures" class="jc-product-page-bottom-flex-col-link-block w-inline-block">
+                  <div><strong>View Product</strong></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endcomment %}
+
+      </div> <!-- /jc-product-page-bottom-flex-row-->
+    </div>
+  </div>
+

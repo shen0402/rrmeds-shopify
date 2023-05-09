@@ -1,0 +1,59 @@
+<div class="tab-inner-careers">
+
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      <div class="tab-content-block-careers">
+        <div class="tab-flex-row-outer-careers">
+          <div class="tab-flex-col-careers-1">
+            <h4 class="tab-flex-col-heading-careers">{{block.settings.title}}</h4>
+            <div class="tab-flex-col-text-careers">{{block.settings.excerpt}}</div>
+          </div>
+          <div class="tab-flex-col-careers-2">
+            <a href="{{block.settings.url}}" class="tab-flex-col-link-careers w-inline-block">
+              <div>View<br>Job Details</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% else %}
+
+    <div class="tab-empty-text-careers">No Current Openings</div>
+
+  {% endif %}
+  
+  
+
+</div>
+
+{% schema %}
+{
+  "name": "Client Service Positions" ,
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Position",
+      "settings": [
+        
+        {
+          "label": "Title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Excerpt",
+          "id": "excerpt",
+          "type": "textarea"
+        },
+        {
+          "label": "Link",
+          "id": "url",
+          "type": "url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

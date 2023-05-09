@@ -1,0 +1,57 @@
+<h4 class="content-block-heading-glossary">C</h4>
+{% for block in section.blocks %}
+	<div class="term-block-glossary">
+	  <h5 class="term-heading-glossary term-heading-glossary-c">{{block.settings.title}}</h5>
+	  <div class="term-rte-glossary w-richtext">
+	    {{block.settings.definition}}
+	  </div>
+	</div>
+{% endfor %}
+
+
+<script type="text/javascript">
+  $(document).ready(function() { 
+
+      $('.term-heading-glossary-c').each(function(i, obj) {
+
+          var text = $(this).text();
+          $(this).html(text.replace('CO2', 'CO<span class="term-heading-glossary-sub-script">2</span>'));
+
+
+      });
+/*
+      $('.term-rte-glossary p').each(function(i, obj) {
+
+          var text = $(this).text();
+          $(this).html(text.replace('CO2', 'CO<span class="term-text-sub-script-glossary">2</span>'));
+
+
+      });*/
+
+   });
+</script>
+
+{% schema %}
+{
+  "name": "C - Terms" ,
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Term",
+      "settings": [
+        
+        {
+          "label": "Term",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Definition",
+          "id": "definition",
+          "type": "richtext"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

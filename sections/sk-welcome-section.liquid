@@ -1,0 +1,53 @@
+<div class="welcome-hero-wrapper wf-section welcome">
+    <div class="welcome-img-wrapper" {% if section.settings.bg_img %} style="background-image: url({{section.settings.bg_img | image_url }})"{%endif%}>
+      <div class="welcome-hero-content-wrapper">
+        <h1 class="welcome-header" data-ix="fadeinup">{{section.settings.main_heading}}</h1>
+        <a href="{{section.settings.btn_url}}" class="green-welcome-btn w-button">{{section.settings.btn_text}}<br><span class="bolder-text-welcome">{{section.settings.btn_text_2}}</span></a>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% schema %}
+{
+"name": "Welcome Section" ,
+"settings": [
+    {
+     "label": "Main Heading",
+     "id": "main_heading",
+     "default": "Discover Targeted Relief",
+     "type": "text"
+    },
+
+    {
+     "label": "Button Url",
+        "id": "btn_url",
+        
+        "type": "url"
+    },
+    {
+        "label": "Button Text",
+           "id": "btn_text",
+           "default": "SHOP WITH",
+           "type": "text"
+       },
+       {
+        "label": "Button Text",
+           "id": "btn_text_2",
+           "default": "Your Welcome Code",
+           "type": "text"
+       },
+       {
+        "label": "Background Image",
+           "id": "bg_img",
+           
+           "type": "image_picker"
+       }
+]
+}
+{% endschema %}

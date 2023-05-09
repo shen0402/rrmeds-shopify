@@ -1,0 +1,119 @@
+<!-- /templates/customers/login.liquid -->
+<div class="jc-login-page-wrapper">
+<div class="grid">
+
+  <div class="w-container login">
+
+    
+      
+ 
+
+
+    {% comment %}
+      If a user has successfully requested a new password, the form.posted_successfully? variable
+      is set to true within the 'recover_customer_password' form only. Within that form you'll see
+      the variable 'resetPassword' set to true, which is used to initialize timber.resetPasswordSuccess().
+    {% endcomment %}
+    <div class="note form-success" id="ResetSuccess" style="display:none;">
+      {{ 'customer.recover_password.success' | t }}
+    </div>
+
+    <div id="CustomerLoginForm" class="form-vertical">
+      {% form 'customer_login' %}
+        <h1 class="jc-main-heading center">Login</h1>
+        <p class="jc-heading-text-login">Are you a wholesale client? Click <a class="paragraph-link" href="https://wholesale.rrmeds.com/" target="_blank">here</a> to log in to our wholesale portal.
+      
+      <br>
+    <br>
+    <a class="paragraph-link dark" href="https://www.rrmeds.com/tools/recurring/login/">Need help accessing your subscriptions?</a>
+  </p>
+        
+        <p class="jc-heading-text-login">  </p>
+        
+        {{ form.errors | default_errors }}
+        
+        <label for="CustomerEmail" class="hidden-label">{{ 'customer.login.email' | t }}</label>
+        <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %} jc-form-input-login w-input" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
+        
+        {% if form.password_needed %}
+          <label for="CustomerPassword" class="hidden-label">{{ 'customer.login.password' | t }}</label>
+          <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %} jc-form-input-login w-input" placeholder="{{ 'customer.login.password' | t }}">
+        {% endif %}
+        
+        <p class="jc-btn-wrapper-login">
+          
+          <div class="jc-medium-btn-section">
+            <input type="submit" class="jc-medium-btn w-button" value="Sign In">
+          </div>
+          
+        </p>
+        {% if form.password_needed %}
+          <p class="jc-login-text-link"><a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
+        {% endif %}
+        <p class="jc-login-text-link">{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
+        
+
+      {% endform %}
+    </div>
+
+    {% comment %}
+      JS shows/hides this form in timber.loginForms()
+    {% endcomment %}
+    <div id="RecoverPasswordForm" style="display: none;">
+
+      <div class="text-center">
+        <h2 class="jc-main-heading center">Reset Your Password</h2>
+        <p class="jc-forgot-pw-text">We will send you an email to reset your password.</p>
+      </div>
+
+      <div class="form-vertical">
+        {% form 'recover_customer_password' %}
+
+          {{ form.errors | default_errors }}
+
+          {% comment %}
+            Assign variable to be used after timber.init() is run in theme.liquid
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+            {% assign resetPassword = true %}
+          {% endif %}
+
+          <label for="RecoverEmail" class="hidden-label">{{ 'customer.recover_password.email' | t }}</label>
+          <input type="email" value="" name="email" id="RecoverEmail" class="jc-form-input-login w-input" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
+
+        <div class="text-center">
+          <p>
+            <div class="jc-medium-btn-section">
+              <input type="submit" class="jc-medium-btn w-button" value="Submit">
+            </div>
+            
+          </p>
+          <button type="button" id="HideRecoverPasswordLink" class="jc-forgot-pw-text-link">{{ 'customer.recover_password.cancel' | t }}</button>
+        </div>
+          
+        {% endform %}
+      </div>
+
+    </div>
+
+    {% comment %}
+      If accounts are set as optional, the following will be shown as an option
+      during checkout, not on the default /login page.
+    {% endcomment %}
+    {% if shop.checkout.guest_login %}
+      <hr class="hr--clear">
+
+      <h1>{{ 'customer.login.guest_title' | t }}</h1>
+      <hr class="hr--small">
+
+      {% form 'guest_login' %}
+        <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">
+      {% endform %}
+    {% endif %}
+
+  </div>
+
+</div>
+</div>
+
+

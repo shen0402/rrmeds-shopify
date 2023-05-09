@@ -1,0 +1,231 @@
+<!-- /templates/page.contact.liquid -->
+<div class="vertical-section-contact wf-section">
+  <div class="vertical-section-inner">
+    <div class="heading-container-contact">
+      <h1 class="jc-section-heading">How can we help?</h1>
+    </div>
+    <div class="text-container-contact">
+      <p class="jc-hero-text-contact">If you have questions or need guidance, we’re here for you! There are a few different ways you can get in touch.  We’ll do our best to get back to you within the same day.</p>
+      <p class="jc-her-text-contact"><strong>Call us:</strong><br/>
+        Schedule a personalized call with one of our Relief Experts by clicking <a class="jc-hero-contact-text-link green" href="https://calendly.com/r-r-client-service/personalized-call">here</a>.
+      </p>
+      <p class="jc-hero-text-contact"><strong>Email us:</strong><br/>
+        <a href="mailto:contact@rrmeds.com" class="jc-hero-contact-text-link green">contact@rrmeds.com</a>
+      </p>
+      <p class="jc-hero-text-contact"><strong>Text us:</strong><br/>
+        303-529-7695
+      </p>
+      <p class="jc-hero-text-contact">You can also fill out the form below. Thanks for your interest–we’ll speak with you soon!</p>
+    </div>
+  </div>
+</div>
+
+<div class="jc-hero-wrapper-contact">
+    <div class="jc-hero-block-contact">
+      <h2 class="jc-section-heading medium">Drop us a line.</h2>
+
+
+      <div class="jc-contact-form-block">
+
+        {% comment %}
+        <script type="text/javascript" src="https://form.jotform.com/jsform/203504583553050"></script>
+        {% endcomment %}
+
+
+        
+        <iframe
+          id="JotFormIFrame-203504583553050"
+          title="B2C Contact Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allowfullscreen="true"
+          allow="geolocation; microphone; camera"
+          src="https://form.jotform.com/203504583553050"
+          frameborder="0"
+          style="
+          min-width: 100%;
+          height:539px;
+          border:none;"
+          scrolling="no"
+        >
+        </iframe>
+        <script type="text/javascript">
+          var ifr = document.getElementById("JotFormIFrame-203504583553050");
+          if (ifr) {
+            var src = ifr.src;
+            var iframeParams = [];
+            if (window.location.href && window.location.href.indexOf("?") > -1) {
+              iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+            }
+            if (src && src.indexOf("?") > -1) {
+              iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+              src = src.substr(0, src.indexOf("?"))
+            }
+            iframeParams.push("isIframeEmbed=1");
+            ifr.src = src + "?" + iframeParams.join('&');
+          }
+          window.handleIFrameMessage = function(e) {
+            if (typeof e.data === 'object') { return; }
+            var args = e.data.split(":");
+            if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+            if (!iframe) { return; }
+            switch (args[0]) {
+              case "scrollIntoView":
+                iframe.scrollIntoView();
+                break;
+              case "setHeight":
+                iframe.style.height = args[1] + "px";
+                break;
+              case "collapseErrorPage":
+                if (iframe.clientHeight > window.innerHeight) {
+                  iframe.style.height = window.innerHeight + "px";
+                }
+                break;
+              case "reloadPage":
+                window.location.reload();
+                break;
+              case "loadScript":
+                var src = args[1];
+                if (args.length > 3) {
+                    src = args[1] + ':' + args[2];
+                }
+                var script = document.createElement('script');
+                script.src = src;
+                script.type = 'text/javascript';
+                document.body.appendChild(script);
+                break;
+              case "exitFullscreen":
+                if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+                else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+                else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+                else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+                else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+                break;
+            }
+            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+            if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+              var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+              iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+            }
+          };
+          if (window.addEventListener) {
+            window.addEventListener("message", handleIFrameMessage, false);
+          } else if (window.attachEvent) {
+            window.attachEvent("onmessage", handleIFrameMessage);
+          }
+          </script>
+
+        
+
+        {% comment %}
+        {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            <div class="jc-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+          {% else %}
+            <div class="jc-contact-form-row w-row">
+              <div class="jc-contact-form-col w-col w-col-6">
+                <input type="text" class="jc-contact-form-input w-input" maxlength="256" name="contact[name]" data-name="Name" placeholder="Name" id="ContactFormName" required="">
+              </div>
+              <div class="jc-contact-form-col w-col w-col-6">
+                <input type="email" class="jc-contact-form-input w-input" maxlength="256" name="contact[email]" data-name="Email" placeholder="Email" id="ContactFormEmail" required="">
+              </div>
+            </div>
+            <div class="jc-contact-form-input-wrapper">
+              <input type="text" class="jc-contact-form-input w-input" maxlength="256" name="contact[subject]" data-name="Subject" placeholder="Subject" id="ContactFormSubject" required="">
+            </div>
+            <div class="jc-contact-form-input-wrapper">
+              <textarea placeholder="Message" maxlength="5000" id="ContactFormMessage" name="contact[body]" class="jc-contact-form-input contact-form-input-area w-input"></textarea>
+            </div>
+            <input type="submit" value="Submit" data-wait="Please wait..." class="jc-contact-form-submit-btn w-button">
+          {% endif %}
+        {% endform %}
+        {% endcomment %}
+
+
+      </div>
+
+
+      
+    </div>
+    
+  </div>
+
+{% comment %}
+<div class="grid">
+
+  <div class="grid__item large--five-sixths push--large--one-twelfth">
+
+    <header class="section-header text-center">
+      <h1>{{ page.title }}</h1>
+      <hr class="hr--small">
+    </header>
+
+    <div class="grid">
+      <div class="grid__item large--four-fifths push--large--one-tenth">
+        <div class="rte rte--nomargin rte--indented-images">
+          {{ page.content }}
+        </div>
+
+        <div class="form-vertical">
+          {% form 'contact' %}
+           
+            {% if form.posted_successfully? %}
+              <p class="note form-success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {% endif %}
+
+            {{ form.errors | default_errors }}
+
+            <div class="grid grid--small">
+              <div class="grid__item large--one-half">
+                <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+                <input type="text" id="ContactFormName" class="input-full" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+              </div>
+
+              <div class="grid__item large--one-half">
+                <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+                <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+              </div>
+            </div>
+
+            <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+            <input type="tel" id="ContactFormPhone" class="input-full" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+            <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+            <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+            <input type="submit" class="btn right" value="{{ 'contact.form.send' | t }}">
+
+          {% endform %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endcomment %}
+
+<style type="text/css">
+#jc-nav-link-hold-active-2 {
+
+ 
+}
+
+@media (max-width: 991px) { 
+  #jc-nav-link-hold-active-2 {
+
+    color:#ffffff;
+
+  }
+}
+</style>
+<style>
+  .fixed-top-wrapper{
+    background-color: transparent;
+  }
+</style>

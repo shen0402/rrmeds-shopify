@@ -1,0 +1,117 @@
+
+
+
+    <div data-duration-in="750" data-duration-out="250" class="jc-tabs-wrapper w-tabs">
+
+      <div class="jc-tabs-menu w-tab-menu">
+      {% for block in section.blocks limit: section.blocks.size %}
+        {%- assign iteration_number = forloop.index -%}
+          {% if iteration_number == 2 %}
+            {%- assign current_class = 'w--current' -%}
+            {% else %}
+            {%- assign current_class = '' -%}
+          {% endif %}
+          
+          <a data-w-tab="Tab {{iteration_number}}" class="jc-tabs-menu-link w-inline-block w-tab-link {{current_class}}">
+            <div>{{ block.settings.tab_menu_heading }}</div>
+          </a>
+
+      {% endfor %}
+      </div>
+
+      <div class="jc-tabs-content-wrapper w-tab-content">
+
+        {% for block in section.blocks limit: section.blocks.size %}
+          {%- assign iteration_number = forloop.index -%}
+            {% if iteration_number == 2 %}
+              {%- assign current_class = 'w--tab-active' -%}
+            {% else %}
+              {%- assign current_class = '' -%}
+            {% endif %}
+                <div data-w-tab="Tab {{iteration_number}}" class="jc-tab-pane w-tab-pane {{current_class}}">
+                  <div class="jc-tab-content-inner">
+                    <div class="jc-tab-content-row w-row">
+                      <div class="jc-tab-content-col-img w-col w-col-7" data-ix="tab-fade-2" style="background-image: url(' {{ block.settings.tab_content_image | img_url: '1024x' }}');"></div>
+                      <div class="jc-tab-content-col w-col w-col-5">
+                        <div class="jc-tab-content-col-inner" data-ix="tab-fade">
+                          <h5 class="jc-tab-content-col-heaing">{{ block.settings.tab_content_heading }}</h5>
+                          <p class="jc-tab-content-col-text">{{ block.settings.tab_content_text}}</p>
+                          <div class="jc-tab-content-btn-wrapper">
+                            <a href="#" class="jc-tab-content-btn-link jc-tab-content-btn-link-prev w-inline-block">
+                              <div>«   Prev</div>
+                            </a>
+                            <div class="jc-tab-content-btn-breaker"></div>
+                            <a href="#" class="jc-tab-content-btn-link jc-tab-content-btn-link-next w-inline-block">
+                              <div>Next   »</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        {% endfor %}
+        
+
+      </div>
+    </div>
+
+    {% schema %}
+    {
+      "name": "Tabs" ,
+      "max_blocks": 5,
+      "blocks": [
+        {
+          "type": "text",
+          "name": "Tab Content",
+          "settings": [
+            {
+              "label": "Tab Menu Heading",
+              "id": "tab_menu_heading",
+              "type": "text"
+            },
+            {
+              "label": "Tab Content Heading",
+              "id": "tab_content_heading",
+              "type": "text"
+            },
+            {
+              "label": "Tab Content Text",
+              "id": "tab_content_text",
+              "type": "textarea"
+            },
+            {
+              "label": "Tab Content Image",
+              "id": "tab_content_image",
+              "type": "image_picker"
+            }
+
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Tabs",
+          "category": "Custom Content",
+          "blocks": [
+            {
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+    {% endschema %}
+
+
+
+
+
+
+
+
+
+
+
+
+

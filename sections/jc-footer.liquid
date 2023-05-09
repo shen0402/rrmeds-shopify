@@ -1,0 +1,349 @@
+
+{% if template == 'index' %}
+{%- assign newsletter_text= 'Garden Of The Gods, Co'  -%}
+{%- assign page_background = ' '  -%}
+{%- assign newsletter_content_text = 'Sign up for the latest R&R updates, promotions, new product releases, and receive a 20% off rrmeds.com code!'  -%}
+{% else %}
+{%- assign page_background = 'jc-newsletter-section-products'  -%}
+{%- assign newsletter_text= 'Aspen, Co'  -%}
+{%- assign newsletter_content_text = 'Sign up for the latest R&R updates, promotions, new product releases, and receive a 20% off rrmeds.com code!'  -%}
+{% endif %}
+
+{%unless template == 'customers/login' or template == 'customers/register' or template == 'customers/account' or template == "cart" or template == 'page.sms-signup' %}
+
+
+  <div class="jc-newsletter-section {{ page_background }}">
+    <div class="newsletter-container">
+
+      <div class="jc-newsletter-content-wrapper img">
+        {% if template == 'page.hemp-extract-101' or template == 'page.all-reviews' or template == 'page.how-hemp-works' or template == 'page.glossary' or template == 'page.subscriptions' or template == 'page.veteran-program' or template == 'page.jc-referral' or template == 'page.rewards' or template == 'page.lab-testing-2' or template == 'page.faq' %}
+          <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_photo_2_smiling_woman.jpg?v=1658358814" class="newsletter-img">
+        {% elsif template contains 'collection' or template contains 'product' %}
+          <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_photo_3_woman_on_beach.jpg?v=1658358814" class="newsletter-img">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_photo_1_man_with_dog.jpg?v=1658253744" class="newsletter-img">
+        {% endif %}
+        
+      </div>
+
+      <div class="jc-newsletter-content-wrapper right">
+        <div class="jc-newsletter-heading-wrapper">
+          <h4 class="jc-newsletter-sub-heading left {{font_color}}">Save 20%</h4>
+          <h3 class="jc-section-heading medium left{{font_color}}">Connect With Us!</h3>
+        </div> 
+        <p class="jc-newsletter-content-text {{font_color}}">{{ newsletter_content_text }}</p>
+        <div class="jc-newsletter-form-block w-form">
+          {%comment%}
+          <div class="klaviyo-form-XphCMC"></div>
+          {% endcomment %}  
+          <div class="klaviyo-form-RFhhze"></div>
+          {% comment %}
+          {% form 'customer' %}
+          {% if form.posted_successfully? %}
+          <div class="jc-form-done">
+            <div>Thank you for signing up for the R&R Medicinals Mailing List!<br><br>
+              If you haven’t received an email from us within 15 minutes of submitting your email address, please check your spam and promotions folders for an email from contact@rrmeds.com.
+            </div>
+          </div>
+          {% else %}
+            <input type="hidden" name="contact[accepts_marketing]" value="true">
+            <div class="jc-newsletter-form-group">
+              <input type="email" class="jc-newsletter-input w-input {{border_color}}" maxlength="256" name="contact[email]" data-name="Email" placeholder="Your Email Address" id="email" required="">
+              <input type="submit" value="Sign Up" data-wait="Please wait..." class="jc-newsletter-submit-btn w-button">
+            </div>
+            {% endif %}
+          {% endform %}
+          {% endcomment %}     
+        </div>
+      </div>
+
+    </div>
+
+  {% comment %}
+  <div class="jc-section-location-text {{ newsletter_text_class }}">{{ newsletter_text }}</div>
+  {% endcomment %}
+  </div>
+  {% endunless %}
+
+
+
+
+
+
+
+
+
+  {%comment%}--------------------------- MOBILE FOOTER --------------------------------------{%endcomment%}
+
+{%comment%}
+  <div class="jc-footer-col-content-wrapper mobile">
+    <a href="/" class="jc-footer-logo-link w-inline-block">
+      <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_R_R_Logo.svg?v=1658254797" alt="R + R Medicinals. Trusted Hemp. Real Results" class="jc-footer-logo-img">
+    </a>
+  </div>
+{%endcomment%}
+
+<div class="mobile-footer-container">
+<nav role="navigation" id="menu-mobile" class="nav-menu-footer mobile footer w-nav-menu">
+
+
+
+
+  <div data-hover="true" data-delay="0" class="nav-dropdown-show-mobile footer w-dropdown">
+    <div class="nav-dropdown-toggle footer w-dropdown-toggle">
+      <div class="jc-nav-overlay-link-mega">MENU</div>
+      <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/arrow.svg?v=1661895838" class="mobile-nav-arrow">
+    </div>
+    <nav class="nav-dropdown-menu footer w-dropdown-list">
+      <div class="nav-link-menu-wrapper footer mobile">
+        <a href="/" class="jc-footer-link-block w-inline-block">
+          <div>Home</div>
+        </a>
+        <a href="/collections/all-products" class="jc-footer-link-block w-inline-block">
+          <div>Products</div>
+        </a>
+        {% comment %}
+        <a href="/pages/who-we-are" class="jc-footer-link-block w-inline-block">
+          <div>Who We Are</div>
+        </a>
+        {% endcomment %}
+        <a href="/pages/learn" class="jc-footer-link-block w-inline-block">
+          <div>Learn</div>
+        </a>
+        <a href="/pages/discounts" class="jc-footer-link-block w-inline-block">
+          <div>Discounts</div>
+        </a>
+        <a href="/pages/contact" class="jc-footer-link-block w-inline-block">
+          <div>Contact</div>
+        </a>
+
+      </div>
+    </nav>
+  </div>
+
+  <div data-hover="true" data-delay="0" class="nav-dropdown-show-mobile footer w-dropdown">
+    <div class="nav-dropdown-toggle footer w-dropdown-toggle">
+
+        <div class="jc-nav-overlay-link-mega">CUSTOMER CARE</div>
+        <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/arrow.svg?v=1661895838" class="mobile-nav-arrow">
+    </div>
+    <nav class="nav-dropdown-menu footer w-dropdown-list">
+      <div class="nav-link-menu-wrapper footer mobile">
+        <a href="/account" class="jc-footer-link-block w-inline-block">
+          <div>My Account</div>
+        </a>
+        <a href="/tools/recurring/login/" class="jc-footer-link-block w-inline-block">
+          <div>Manage Your Subscriptions</div>
+        </a>
+        <a href="/pages/wholesale" class="jc-footer-link-block w-inline-block">
+          <div>Wholesale Inquiries</div>
+        </a>
+        <a href="https://wholesale.rrmeds.com/" class="jc-footer-link-block w-inline-block" target="_blank">
+          <div>Wholesale Portal</div>
+        </a>
+        <a href="https://www.rrmeds.com/tools/returns/start" class="jc-footer-link-block w-inline-block">
+          <div>Product Returns</div>
+        </a>
+        <a href="/pages/frequently-asked-questions" class="jc-footer-link-block jc-footer-link-block-last w-inline-block">
+          <div>FAQs</div>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div data-hover="true" data-delay="0" class="nav-dropdown-show-mobile footer w-dropdown">
+    <div class="nav-dropdown-toggle footer w-dropdown-toggle">
+      <div class="jc-nav-overlay-link-mega">POLICIES</div>
+      <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/arrow.svg?v=1661895838" class="mobile-nav-arrow">
+    </div>
+    <nav class="nav-dropdown-menu footer w-dropdown-list">
+      <div class="nav-link-menu-wrapper footer mobile">
+        <a href="/pages/website-terms-of-service" class="jc-footer-link-block w-inline-block">
+          <div>Terms of Service</div>
+        </a>
+        <a href="/pages/privacy-policy" class="jc-footer-link-block w-inline-block">
+          <div>Privacy Policy</div>
+        </a>
+        <a href="/pages/website-shipping-policy" class="jc-footer-link-block w-inline-block">
+          <div>Shipping Policy</div>
+        </a>
+        <a href="/pages/website-disclaimer" class="jc-footer-link-block jc-footer-link-block-last w-inline-block">
+          <div>Website Disclaimer</div>
+        </a>
+      </div>
+    </nav>
+  </div>
+  
+</nav>
+
+<div class="jc-footer-bottom-wrapper mobile">
+
+    <div class="jc-footer-social-row">
+      <a href="https://www.facebook.com/rrmeds/" class="jc-footer-social-link w-inline-block" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_facebook_icon.svg?v=1658254797" alt="Facebook Icon" class="jc-footer-social-img">
+        <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/facebook-r-min.png" alt="Facebook Icon Red" class="jc-footer-social-img-hover">
+      </a>
+        <a href="https://www.instagram.com/rrmedicinals/" class="jc-footer-social-link w-inline-block" target="_blank">
+          <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_IG_icon.svg?v=1658254797" alt="Instagram Icon" class="jc-footer-social-img">
+          <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/instagram-r-min.png" alt="Instagram Icon Red" class="jc-footer-social-img-hover">
+        </a>
+          <a href="mailto:contact@rrmeds.com" class="jc-footer-social-link w-inline-block">
+            <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_email_icon.svg?v=1658254797" alt="Mail Icon" class="jc-footer-social-img mail">
+            <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/mail-r-min.png" alt="Mail Icon Red" class="jc-footer-social-img-hover">
+        </a>   
+      </div>
+      {% comment %}
+      <div class="jc-footer-payment-wrapper">
+        <img class="jc-footer-payment-img" src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/visa-mastercard-min.png" alt="Visa and MasterCard Icons">
+      </div>
+      {% endcomment %}
+
+    <div class="jc-footer-bottom-text">© R&R 2023</div>
+  </div>
+  <div class="jc-footer-disclaimer-section">
+    <p class="jc-footer-disclaimer-text">*The statements made regarding these products have not been evaluated by the Food and Drug Administration. The efficacy of these products has not been confirmed by FDA-approved research. These products are not intended to diagnose, treat, cure or prevent any disease. All information presented here is not meant as a substitute for or alternative to information from health care practitioners. Please consult your health care professional about potential interactions or other possible complications before using any product. The Federal Food, Drug, and Cosmetic Act require this notice.</p>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {%comment%}--------------------------- Desktop FOOTER --------------------------------------{%endcomment%}
+
+
+
+<div class="jc-footer-wrapper desktop">
+  <div class="jc-footer-top-wrapper">
+    <div class="jc-container-large">
+
+      <div class="jc-footer-top-row w-row">
+        <div class="jc-footer-col jc-footer-col-logo w-col w-col-3">
+          <div class="jc-footer-col-content-wrapper">
+            <a href="/" class="jc-footer-logo-link w-inline-block">
+              <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_R_R_Logo.svg?v=1658254797" alt="R + R Medicinals. Trusted Hemp. Real Results" class="jc-footer-logo-img">
+            </a>
+            <div class="jc-footer-social-row">
+              <a href="https://www.facebook.com/rrmeds/" class="jc-footer-social-link w-inline-block" target="_blank">
+                <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_facebook_icon.svg?v=1658254797" alt="Facebook Icon" class="jc-footer-social-img">
+                <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/facebook-r-min.png" alt="Facebook Icon Red" class="jc-footer-social-img-hover">
+              </a>
+                <a href="https://www.instagram.com/rrmedicinals/" class="jc-footer-social-link w-inline-block" target="_blank">
+                  <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_IG_icon.svg?v=1658254797" alt="Instagram Icon" class="jc-footer-social-img">
+                  <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/instagram-r-min.png" alt="Instagram Icon Red" class="jc-footer-social-img-hover">
+                </a>
+                  <a href="mailto:contact@rrmeds.com" class="jc-footer-social-link w-inline-block">
+                    <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_email_icon.svg?v=1658254797" alt="Mail Icon" class="jc-footer-social-img mail">
+                    <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/mail-r-min.png" alt="Mail Icon Red" class="jc-footer-social-img-hover">
+                </a>   
+              </div>
+              {% comment %}
+              <div class="jc-footer-payment-wrapper">
+                <img class="jc-footer-payment-img" src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/visa-mastercard-min.png" alt="Visa and MasterCard Icons">
+              </div>
+              {% endcomment %}
+          </div>
+        </div>
+        <div class="jc-footer-col w-col w-col-3">
+          <div class="jc-footer-col-inner">
+            <h6 class="jc-footer-col-heading">Menu</h6>
+            <a href="/" class="jc-footer-link-block w-inline-block">
+              <div>Home</div>
+            </a>
+            <a href="/collections/all-products" class="jc-footer-link-block w-inline-block">
+              <div>Products</div>
+            </a>
+            {% comment %}
+            <a href="/pages/who-we-are" class="jc-footer-link-block w-inline-block">
+              <div>Who We Are</div>
+            </a>
+            {% endcomment %}
+            <a href="/pages/learn" class="jc-footer-link-block w-inline-block">
+              <div>Learn</div>
+            </a>
+            <a href="/pages/discounts" class="jc-footer-link-block w-inline-block">
+              <div>Discounts</div>
+            </a>
+            <a href="/pages/contact" class="jc-footer-link-block w-inline-block">
+              <div>Contact</div>
+            </a>
+
+          </div>
+        </div>
+        <div class="jc-footer-col w-col w-col-3">
+          <div class="jc-footer-col-inner">
+            <h6 class="jc-footer-col-heading">Customer Care</h6>
+            <a href="/account" class="jc-footer-link-block w-inline-block">
+              <div>My Account</div>
+            </a>
+            <a href="/tools/recurring/login/" class="jc-footer-link-block w-inline-block">
+              <div>Manage Your Subscriptions</div>
+            </a>
+            <a href="/pages/wholesale" class="jc-footer-link-block w-inline-block">
+              <div>Wholesale Inquiries</div>
+            </a>
+            <a href="https://wholesale.rrmeds.com/" class="jc-footer-link-block w-inline-block" target="_blank">
+              <div>Wholesale Portal</div>
+            </a>
+            <a href="https://www.rrmeds.com/tools/returns/start" class="jc-footer-link-block w-inline-block">
+              <div>Product Returns</div>
+            </a>
+            <a href="/pages/frequently-asked-questions" class="jc-footer-link-block jc-footer-link-block-last w-inline-block">
+              <div>FAQs</div>
+            </a>
+          </div>
+        </div>
+        <div class="jc-footer-col w-col w-col-3">
+          <div class="jc-footer-col-inner">
+            <h6 class="jc-footer-col-heading">Policies</h6>
+            <a href="/pages/website-terms-of-service" class="jc-footer-link-block w-inline-block">
+              <div>Terms of Service</div>
+            </a>
+            <a href="/pages/privacy-policy" class="jc-footer-link-block w-inline-block">
+              <div>Privacy Policy</div>
+            </a>
+            <a href="/pages/website-shipping-policy" class="jc-footer-link-block w-inline-block">
+              <div>Shipping Policy</div>
+            </a>
+            <a href="/pages/website-disclaimer" class="jc-footer-link-block jc-footer-link-block-last w-inline-block">
+              <div>Website Disclaimer</div>
+            </a>
+          </div>
+        </div>
+      </div> <!-- footer top row -->
+
+      <div class="jc-footer-disclaimer-section">
+        <p class="jc-footer-disclaimer-text">*The statements made regarding these products have not been evaluated by the Food and Drug Administration. The efficacy of these products has not been confirmed by FDA-approved research. These products are not intended to diagnose, treat, cure or prevent any disease. All information presented here is not meant as a substitute for or alternative to information from health care practitioners. Please consult your health care professional about potential interactions or other possible complications before using any product. The Federal Food, Drug, and Cosmetic Act require this notice.</p>
+      </div>
+
+    </div> <!-- container large-->
+  </div>
+  <div class="jc-footer-bottom-wrapper">
+    <div class="w-container">
+      <div class="jc-footer-bottom-text">© R&R 2023</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Footer"
+}
+{% endschema %}

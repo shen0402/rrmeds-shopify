@@ -1,0 +1,34 @@
+<h4 class="content-block-heading-glossary">F</h4>
+{% for block in section.blocks %}
+	<div {% if block.settings.title == 'Flavonoids' %}id="flavonoids"{% endif %} class="term-block-glossary">
+	  <h5 class="term-heading-glossary">{{block.settings.title}}</h5>
+	  <div class="term-rte-glossary w-richtext">
+	    {{block.settings.definition}}
+	  </div>
+	</div>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "F - Terms" ,
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Term",
+      "settings": [
+        
+        {
+          "label": "Term",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Definition",
+          "id": "definition",
+          "type": "richtext"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

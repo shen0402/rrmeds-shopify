@@ -1,0 +1,65 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+     
+    if (!$.cookie('jc_news_alert')) {
+
+        setTimeout(function(){ 
+        
+          $('.jc-modal-wrapper').fadeIn(500);
+         // $('body').css('overflow', 'hidden');
+        
+        }, 2000);
+
+          var date = new Date();
+          date.setTime(date.getTime() + 7776000000); 
+          $.cookie('jc_news_alert', true, { expires: date });
+         
+          }
+  });
+</script>
+
+
+<script>
+$(document).ready(function(){
+
+  $('.jc-modal-close-btn-softgels').click(function(e) {
+      e.preventDefault();
+	   $('body').css('overflow', 'auto');
+     $('.jc-modal-softgels').fadeTo(500, 0, function(){
+
+        $('.jc-modal-softgels').hide();
+
+     });
+
+  });
+
+  
+});
+
+$(document).ready(function(){
+
+  $('.jc-modal-close-btn').click(function(e) {
+      e.preventDefault();
+    // $('body').css('overflow', 'auto');
+     $('.jc-modal-wrapper').fadeTo(500, 0, function(){
+
+        $('.jc-modal-wrapper').hide();
+
+     });
+
+  });
+
+  
+});
+
+</script>
+
+
+
+
+

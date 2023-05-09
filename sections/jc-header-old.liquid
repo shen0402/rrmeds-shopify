@@ -1,0 +1,164 @@
+{% comment %}
+<div class="jc-fixed-bar-mobile-wrapper">
+  <div class="jc-fixed-bar-link"><strong>{{section.settings.banner_text}}</strong></div>
+</div>
+{% endcomment %}
+<div class="jc-fixed-wrapper">
+  
+  <div class="jc-fixed-bar-wrapper">
+    <div class="jc-container-large">
+      <div class="jc-fixed-bar-row w-row">
+        <div class="jc-fixed-bar-col jc-fixed-bar-col-social w-col w-col-3">
+          <div class="jc-fixed-bar-social-row"><a href="https://www.facebook.com/rrmedicinals/" class="jc-fixed-bar-social-link w-inline-block" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/facebook-white-min.png" alt="" class="jc-fixed-bar-social-img"></a><a href="https://www.instagram.com/rrmedicinals/" class="jc-fixed-bar-social-link w-inline-block" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/instagram-white-min.png" alt="" class="jc-fixed-bar-social-img"></a><a href="mailto:contact@rrmeds.com" class="jc-fixed-bar-social-link w-inline-block"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/mail-white-min.png" alt="" class="jc-fixed-bar-social-img"></a></div>
+        </div>
+        <div class="jc-fixed-bar-col-center w-col w-col-6"><div class="jc-fixed-bar-link"><strong>{{section.settings.banner_text}}</strong></div></div>
+        <div class="jc-fixed-bar-col-right w-col w-col-3">
+          <div class="jc-fixed-bar-flex-row">
+
+            {% if customer %}
+
+            <div class="jc-fixed-bar-flex-link-wrapper">
+              <a href="/account" class="jc-fixed-bar-flex-link w-inline-block">
+                <div>Hi, {{ customer.first_name }}!</div>
+              </a>
+              <div data-hover="1" data-delay="0" class="jc-fixed-bar-dropdown w-dropdown">
+                <div class="jc-fixed-bar-dropdown-toggle w-dropdown-toggle"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/dropdown-triangle-alt-min.png" alt="Down Arrow" class="jc-fixed-bar-flex-link-img" /></div>
+                <nav class="jc-fixed-bar-dropdown-menu w-dropdown-list">
+                  <a href="/account" class="jc-fixed-bar-dropdown-link w-dropdown-link">Order History</a>
+                  <a href="/account?rewards" class="jc-fixed-bar-dropdown-link w-dropdown-link">Rewards Points</a>
+                  <a href="https://www.rrmeds.com/tools/checkout/api/manage/subscription/app" class="jc-fixed-bar-dropdown-link w-dropdown-link">Auto Shipments</a>
+                  <a href="/account/logout" class="jc-fixed-bar-dropdown-link w-dropdown-link">Log Out</a>
+                </nav>
+              </div>
+            </div>
+
+            {% else %}
+              <a href="/account/login" class="jc-fixed-bar-flex-link w-inline-block">
+                <div>
+                  Sign In
+                </div>
+              </a>
+            {% endif %}
+              
+            <div class="jc-fixed-bar-flex-breaker"></div>
+            <a href="/cart" class="jc-fixed-bar-cart-link w-inline-block"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/cart.png?451" alt="" class="jc-fixed-bar-cart-img"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jc-fixed-nav-wrapper">
+    <div data-collapse="medium" data-animation="default" data-duration="400" class="jc-fixed-navbar w-nav">
+      <div class="jc-fixed-nav-container w-container">
+        <div class="jc-fixed-nav-flex-row"><a href="/" class="jc-fixed-nav-brand w-nav-brand"><img src="//cdn.shopify.com/s/files/1/0107/7431/5072/files/RR_2020_V3_Pure_Black-min.png" alt="R + R Medicinals. Trusted Hemp. Real Results." class="jc-fixed-nav-logo"></a>
+          <nav role="navigation" class="jc-nav-menu w-nav-menu">
+            <a href={% if template == 'index' %}"#"{% else %}"/"{% endif %} class="jc-nav-link w-nav-link">Home</a>
+
+
+            <div data-hover="1" data-delay="0" class="w-dropdown">
+              <div class="jc-nav-link jc-nav-link-dropdown w-dropdown-toggle" id="jc-nav-link-products">
+                <div class="jc-nav-dropdown-text">Products</div>
+                <div class="jc-nav-dropdown-icon w-icon-dropdown-toggle"></div>
+                <a href="/collections/all-products" class="jc-nav-overlay-link w-inline-block"></a>
+              </div>
+              <nav class="jc-nav-dropdown-menu w-dropdown-list jc-nav-dropdown-menu-alt-3"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/navigation-arrow-min.png" alt="" class="jc-nav-dropdown-img">
+                <a href="/collections/all-products" class="jc-nav-dropdown-link jc-nav-dropdown-link-show-mobile w-dropdown-link">All Products</a>
+                <a href="/products/cream-2-5-fl-oz" class="jc-nav-dropdown-link w-dropdown-link">Cream</a>
+                <a href="/collections/gummies" class="jc-nav-dropdown-link w-dropdown-link">Gummies</a>
+                <a href="/collections/tinctures" class="jc-nav-dropdown-link w-dropdown-link">Tinctures</a>
+                <a href="/collections/softgels" class="jc-nav-dropdown-link w-dropdown-link">Softgels</a>
+                <a href="/collections/thc-free-products" class="jc-nav-dropdown-link w-dropdown-link">THC Free</a>
+                <a href="/collections/pet-products" class="jc-nav-dropdown-link w-dropdown-link">Pet Products</a>
+                <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-nav-dropdown-link  w-dropdown-link" target="_blank">Delta-8 THC</a>
+                <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-nav-dropdown-link jc-nav-dropdown-link-last w-dropdown-link" target="_blank">Delta-9 THC</a>
+              </nav>
+            </div>
+            <a href="/pages/all-reviews" class="jc-nav-link w-nav-link">Reviews</a>
+            <div data-hover="1" data-delay="0" class="w-dropdown">
+              <div class="jc-nav-link jc-nav-link-dropdown w-dropdown-toggle" id="jc-nav-link-hold-active">
+                <div class="jc-nav-dropdown-text">Learn</div>
+                <div class="jc-nav-dropdown-icon w-icon-dropdown-toggle"></div>
+                <a href="/pages/learn" class="jc-nav-overlay-link w-inline-block"></a>
+              </div>
+              <nav class="jc-nav-dropdown-menu w-dropdown-list"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/navigation-arrow-min.png" alt="" class="jc-nav-dropdown-img">
+                <a href="/pages/learn" class="jc-nav-dropdown-link jc-nav-dropdown-link-show-mobile w-dropdown-link">Learn</a>
+                <a href="/pages/cbd-101" class="jc-nav-dropdown-link w-dropdown-link">CBD 101</a>
+                <a href="/pages/how-hemp-works" class="jc-nav-dropdown-link w-dropdown-link">How Hemp Works</a>
+                <a href="/pages/our-hemp" class="jc-nav-dropdown-link w-dropdown-link">Our Hemp</a>
+                <a href="/pages/lab-testing" class="jc-nav-dropdown-link w-dropdown-link">Lab Testing</a>
+                <a href="/pages/frequently-asked-questions" class="jc-nav-dropdown-link w-dropdown-link">FAQs</a>
+                <a href="/pages/glossary" class="jc-nav-dropdown-link jc-nav-dropdown-link-last w-dropdown-link">CBD Glossary</a>
+              </nav>
+            </div>
+
+          
+
+            <div data-hover="1" data-delay="0" class="w-dropdown">
+              <div class="jc-nav-link jc-nav-link-dropdown w-dropdown-toggle" id="jc-nav-link-discounts">
+                <div class="jc-nav-dropdown-text">Discounts</div>
+                <div class="jc-nav-dropdown-icon w-icon-dropdown-toggle"></div>
+                <a href="/pages/discounts" class="jc-nav-overlay-link w-inline-block"></a>
+              </div>
+              <nav class="jc-nav-dropdown-menu jc-nav-dropdown-menu-alt w-dropdown-list"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/navigation-arrow-min.png" alt="" class="jc-nav-dropdown-img">
+                <a href="/pages/discounts" class="jc-nav-dropdown-link jc-nav-dropdown-link-show-mobile w-dropdown-link">Discounts</a>
+                {% comment %}
+                <a href="/pages/holiday-deals" class="jc-nav-dropdown-link w-dropdown-link">Holiday Deals</a>
+                {% endcomment %}
+                <a href="/pages/auto-ship-program" class="jc-nav-dropdown-link w-dropdown-link">Auto Ship - 15% Off</a>
+                <a href="/pages/veteran-program" class="jc-nav-dropdown-link w-dropdown-link">Veterans - 25% Off</a>
+                <a href="/pages/referral" class="jc-nav-dropdown-link w-dropdown-link">Referrals - 30% Off</a>
+                <a href="/pages/rewards" class="jc-nav-dropdown-link jc-nav-dropdown-link-last w-dropdown-link">Loyalty Discounts</a>
+                </nav>
+            </div>
+
+            <div data-hover="1" data-delay="0" class="w-dropdown">
+              <div class="jc-nav-link jc-nav-link-dropdown w-dropdown-toggle" id="jc-nav-link-hold-active-2">
+                <div class="jc-nav-dropdown-text">Contact</div>
+                <div class="jc-nav-dropdown-icon w-icon-dropdown-toggle"></div>
+                <a href="/pages/contact" class="jc-nav-overlay-link w-inline-block"></a>
+              </div>
+              <nav class="jc-nav-dropdown-menu jc-nav-dropdown-menu-alt-2 w-dropdown-list"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/navigation-arrow-min.png" alt="" class="jc-nav-dropdown-img">
+                <a href="/pages/contact" class="jc-nav-dropdown-link w-dropdown-link">Contact</a>
+                <a href="/pages/wholesale" class="jc-nav-dropdown-link w-dropdown-link">Wholesale</a>
+                <a href="/pages/careers" class="jc-nav-dropdown-link jc-nav-dropdown-link-last w-dropdown-link">Careers</a>
+              </nav>
+            </div>
+
+          </nav>
+
+          <div class="jc-nav-menu-btn w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+    <div class="jc-fixed-nav-overlay"></div>
+    {% if template == 'index' %}
+      <div class="jc-fixed-nav-overlay-alt"></div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Header" ,
+      "settings": [
+        {
+           "type": "richtext",
+           "id": "banner_text",
+           "default": "<p>FREE SHIPPING ON ALL DOMESTIC ORDERS!</p>",
+           "label": "Banner Text"
+        }
+    ]
+  }
+{% endschema %}
+
+
+
+
+
+
+
+

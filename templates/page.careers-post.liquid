@@ -1,0 +1,51 @@
+{% assign form_embed = page.metafields.formEmbed.embed %}
+
+<div class="hero-wrapper-careers">
+  <div class="hero-heading-wrapper-careers">
+    <h1 class="hero-heading-careers">Careers With R&R Medicinals</h1>
+  </div>
+</div>
+<div class="mid-wrapper-careers-post">
+  <div class="mid-container-careers">
+    <div class="mid-btn-wrapper-careers-post">
+      <div class="mid-btn-flex-row-careers-post">
+        
+          <a href="/pages/careers" class="mid-btn-careers-post mid-btn-careers-post-alt w-button">Back To All Listings</a>
+
+      </div>
+    </div>
+    <h2 class="mid-heading-careers-post">{{page.title}}</h2>
+    <div class="mid-btn-flex-col-careers-post-alt">
+      <a id="form-scroll" href="#form-apply" class="mid-btn-careers-post w-button">Apply Now</a>
+    </div>
+    <div class="mid-content-block-careers-post">
+      <div class="page-rte-wrapper-careers-post rte">
+        {{page.content}}
+      </div>
+    </div>
+    <div id="form-apply" class="form-section-careers">
+      <div class="form-embed-careers w-embed w-script">
+        <script type="text/javascript" src="{{form_embed}}"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() { 
+
+   // var height = $('.jc-fixed-wrapper').outerHeight();
+    var height = 125;
+
+
+    $('#form-scroll').click(function()
+    {
+      $('html, body').animate({
+          scrollTop: $( $.attr(this, 'href') ).offset().top-height
+      }, 1000);
+      return false;
+    });
+    
+
+   });
+</script>

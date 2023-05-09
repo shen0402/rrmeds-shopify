@@ -1,0 +1,63 @@
+<div class="vertical-section-contact grey wf-section">
+  <div class="vertical-section-inner">
+    <h1 class="jc-main-heading medium">Discover Our Hemp</h1>
+  </div>
+</div>
+
+<div class="jc-hero-learn">
+  <div class="jc-learn-hero-content-wrapper">
+    <div class="jc-flex-row-learn">
+      {% for block in section.blocks %}
+      
+        <div class="jc-hero-flex-col-learn">
+          <div class="jc-hero-col-inner-learn">
+            <div class="jc-hero-col-img-block-learn" data-ix="hero-block-learn" style="background-image: url({{ block.settings.bg_image | img_url: '800x' }});">
+              <div class="jc-hero-block-overlay"></div>
+              <a href="{{block.settings.url}}" class="jc-hero-col-img-block-overlay-learn"></a>
+            </div>
+          </div>
+          <div class="jc-hero-col-img-block-content-wrapper-learn">
+            <a href="{{block.settings.url}}" class="heading-link">
+              <h3 class="jc-product-section-heading no-margin white light">{{block.settings.heading}}</h3>
+            </a>
+            
+          </div>
+        </div>
+      {% endfor %}
+    </div> <!-- jc-flex-row-learn -->
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Learn Page" ,
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Discover Square",
+      "settings": [
+        {
+          "label": "Heading",
+          "id": "heading",
+          "type": "text"
+        },
+        {
+          "label": "Link",
+          "id": "url",
+          "type": "url"
+        },
+        {
+          "label": "Background Image",
+          "id": "bg_image",
+          "type": "image_picker"
+        }
+
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+

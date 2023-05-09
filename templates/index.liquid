@@ -1,0 +1,87 @@
+<!-- /templates/index.liquid -->
+{% comment %}
+<div class="index-sections">
+  {{ content_for_index }}
+</div>
+{% endcomment %}
+
+{% comment %}
+{{ content_for_index }}
+{% endcomment %}
+
+{% section 'sk-holiday-hero'%}
+{%comment%}
+{% section 'jc-home-hero-section' %}
+{%endcomment%}
+{% section 'sk-home-logo-section' %}
+
+
+<div class="jc-products-section">
+  <div class="jc-container-large">
+    <div class="jc-section-heading-wrapper">
+      <h2 class="jc-section-heading">Our Products</h2>
+      <div class="jc-medium-btn-section"><a href="/collections/all-products" class="jc-medium-btn less-padding w-button">Shop All Products</a></div>
+    </div>
+
+    {% section 'jc-product-row-new' %}
+
+  </div>
+</div>
+
+<div class="jc-sub-hero-section-home-home">
+{% section 'jc-disclaimer' %}
+</div>
+
+
+
+{% section 'sk-banner-with-text-section' %}
+
+<div class="anchor-point" id="reviews-section"></div>
+<div class="jc-product-bottom-reviews-wrapper" id="reviews-section">
+  <div class="jc-product-bottom-reviews-container">
+    <div class="review-heading-wrapper">
+      <h3 class="jc-section-heading">An experience worth talking about.</h3>
+      {%comment%}
+      <div class="review-link-wrapper">
+        <img class="stars-img" src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-home_AST_Reviews_stars.svg?v=1658166184">
+        <a class="review-link" href="#">606 Reviews</a>
+      </div>
+      {%endcomment%}
+    </div>
+    <div class='embedsocial-reviews' data-ref="dac7e3baa4ac8d085777aa9d4d00a3ce2bae6a00"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/ri.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialReviewsScript"));</script>
+
+
+    <div class="jc-medium-btn-section"><a href="/pages/all-reviews" class="jc-medium-btn w-button">See All Reviews</a></div> 
+  </div>
+</div>
+
+
+{%- comment -%}
+  {% section 'sk-banner-with-two-topics' %}
+{%- endcomment -%}
+
+{% section 'jc-r-r-difference' %}
+{% comment %}
+<div class="jc-section-tabs">
+  <div class="jc-tab-container">
+    <div class="jc-section-heading-wrapper jc-section-heading-wrapper-margin">
+      <h2 class="jc-section-heading">We Believe Hemp Can Change Lives</h2>
+      <div class="jc-section-heading-hr-tabs"></div>
+      <div class="jc-section-heading-hr-tabs jc-section-heading-hr-bottom"></div>
+    </div>
+    {% section 'jc-tabs' %}
+  </div>
+</div>
+{% endcomment %}
+
+{% section 'sk-banner-with-text-center-section' %}
+
+
+
+
+
+<style>
+  .fixed-top-wrapper{
+    background-color: transparent;
+  }
+</style>

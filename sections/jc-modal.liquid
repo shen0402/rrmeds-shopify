@@ -1,0 +1,38 @@
+
+
+
+    <div class="jc-modal-wrapper">
+      <div class="jc-modal-content-outer"><img src="//cdn.shopify.com/s/files/1/0107/7431/5072/files/RR_2020_V3_Pure_Black-min.png" alt="R&R Medicinals Logo" class="jc-modal-logo-img" />
+        <div class="jc-modal-content-wrapper">
+          <a href="#" class="jc-modal-close-btn">X</a>
+          <div class="jc-modal-form-block w-form">
+            <div class="jc-modal-heading">Connect with Us!</div>
+            <div class="jc-modal-heading"><span class="jc-modal-heading-alt">Save 20%</span></div>
+            <p class="jc-modal-text">Sign up for the latest R&R updates, promotions, new product releases, and receive a 20% off rrmeds.com code!</p>
+            <div class="klaviyo-form-XphCMC"></div>
+            {% comment %}
+            {% form 'customer' %}
+              {% if form.posted_successfully? %}
+              <div class="jc-modal-form-success">
+                <div class="jc-modal-success-text">Thank you for subscribing! Please check your email for the 15% off code.</div>
+                <div class="jc-modal-success-text-bottom">If you don’t receive the email within 15 minutes, check your spam or junk folder for an email from contact@rrmeds.com</div>
+              </div>
+              {% else %}
+              <div class="jc-modal-heading">Get <span class="jc-modal-heading-alt">15%</span> Off</div>
+              <p class="jc-modal-text">Subscribe to our mailing list and receive 15% off your purchase!</p>
+              <input type="hidden" name="contact[accepts_marketing]" value="true">
+              <label for="email" class="jc-modal-form-label">Email Address</label>
+              <input type="email" class="jc-modal-form-input w-input" maxlength="256" name="contact[email]" data-name="Email" id="email" required="" />
+              <input type="submit" value="Subscribe" data-wait="Please wait..." class="jc-modal-btn w-button" />
+              <p class="jc-modal-bottom-text">We keep your information safe and won't spam your inbox with unwanted emails.</p>
+            {% endif %}
+            {% endform %}
+            {% endcomment %}
+      
+          </div>
+        </div>
+        {% comment %}
+        <div class="jc-section-location-text-modal">Colorado Springs, CO</div>
+        {% endcomment %}
+      </div>
+    </div>

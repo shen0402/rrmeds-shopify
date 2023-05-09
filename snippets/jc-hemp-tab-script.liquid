@@ -1,0 +1,23 @@
+<script>
+
+$(".jc-tab-menu-link-hemp").hover(function(){
+
+		if( !$(this).hasClass("w--current") ){
+
+		  		var menuImgHover = $(this).find('.jc-tab-menu-img-wrapper > .jc-tab-menu-img-hover');
+				menuImgHover.fadeTo(250,1);
+		  } 
+  		
+  }, function(){
+		if( !$(this).hasClass("w--current") ){
+
+		  		var menuImgHover = $(this).find('.jc-tab-menu-img-wrapper > .jc-tab-menu-img-hover');
+				menuImgHover.fadeTo(250,0);
+		  } 
+});
+
+$(".jc-tab-menu-link-hemp").click(function(){
+  $('.jc-tab-menu-img-hover').css('opacity','0');
+  $(this).find('.jc-tab-menu-img-wrapper > .jc-tab-menu-img-hover').css('opacity','1');
+});
+</script>

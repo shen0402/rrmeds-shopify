@@ -1,0 +1,108 @@
+<div id="amazon-reviews-app-container" product-id={{product.id}}>
+  <style type="text/css">
+    #amazon-product-reviews{
+      margin-top:20px;
+      display:none;
+    }
+  </style>
+  
+  <div id="amazon-product-reviews">
+    <hr style="border:1px solid #f1f1f1;margin:40px 0px 10px;" />
+    <!--<h3>Amazon Reviews</h3>-->
+    <div id="amazon-product-reviews-data">
+      <span class="review-heading">Customer Reviews</span>
+      <a href="javascript:void(0);" target="_blank" id="amazon-product-link">View on Amazon</a>
+
+      {% assign custom_reviews = shop.metafields["amazonproductreviews"].custom_reviews %}
+      {% if custom_reviews == 1 %}
+      <a style="float:right;display:block;width:auto;background:#4CAF50;color:#FFF;padding:5px 10px;font-size:12px;" href="javascript:void(0);" id="amazon-write-review">Write a Review</a>
+      <div style="clear:both;"></div>
+      {% endif %}
+      {% assign addAggregateRating = false %}
+      {% if product.metafields["amazonproductreviews"].review_count and product.metafields["amazonproductreviews"].rating_value %}
+      	{% assign addAggregateRating = true %}
+      {% endif %}
+
+      <div class="review-overview-rating" {% if addAggregateRating %}itemscope="" itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating"{% endif %}>
+      	{% if addAggregateRating %}
+	<meta itemprop="itemReviewed" content="{{ product.title }}">
+	<meta itemprop="bestRating" content="5">
+	<meta itemprop="worstRating" content="1">
+	<meta itemprop="reviewCount" content="{{ product.metafields["amazonproductreviews"].review_count }}">
+	<meta itemprop="ratingValue" content="{{ product.metafields["amazonproductreviews"].rating_value }}">
+	{% endif %}
+
+        <div class="review-overview-rating-stars">
+          <div class="stars-empty">
+            <span class="fa fa-star review-star-icon"></span>
+            <span class="fa fa-star review-star-icon"></span>
+            <span class="fa fa-star review-star-icon"></span>
+            <span class="fa fa-star review-star-icon"></span>
+            <span class="fa fa-star review-star-icon"></span>
+          
+            <div class="stars-filled">
+              <span class="fa fa-star review-star-icon review-star-checked"></span>
+              <span class="fa fa-star review-star-icon review-star-checked"></span>
+              <span class="fa fa-star review-star-icon review-star-checked"></span>
+              <span class="fa fa-star review-star-icon review-star-checked"></span>
+              <span class="fa fa-star review-star-icon review-star-checked"></span>
+            </div>
+          </div>
+        </div>
+        <span class="reviewTotalNumber">&nbsp;</span>
+        <p><span class="average_rating_number">&nbsp;</span> out of 5 stars</p>
+      </div>
+
+      {% if custom_reviews == 1 %}
+      {% include 'amazon-product-review-form' %}
+      {% endif %}
+
+      <hr style="border:3px solid #f1f1f1;margin:5px 0px;" />
+    
+      <div class="review-overview-row">
+        <div class="review-left-side"><div>5 star</div></div>
+        <div class="review-middle-side">
+          <div class="review-bar-container"><div class="review-bar-5"></div></div>
+        </div>
+        <div class="review-left-side review-right-side"><div class="review-5-star-count">&nbsp;</div></div>
+
+
+        <div class="review-left-side"><div>4 star</div></div>
+        <div class="review-middle-side">
+          <div class="review-bar-container"><div class="review-bar-4"></div></div>
+        </div>
+        <div class="review-left-side review-right-side"><div class="review-4-star-count">&nbsp;</div></div>
+
+
+        <div class="review-left-side"><div>3 star</div></div>
+        <div class="review-middle-side">
+          <div class="review-bar-container"><div class="review-bar-3"></div></div>
+        </div>
+        <div class="review-left-side review-right-side"><div class="review-3-star-count">&nbsp;</div></div>
+
+
+        <div class="review-left-side"><div>2 star</div></div>
+        <div class="review-middle-side">
+          <div class="review-bar-container"><div class="review-bar-2"></div></div>
+        </div>
+        <div class="review-left-side review-right-side"><div class="review-2-star-count">&nbsp;</div></div>
+
+
+        <div class="review-left-side"><div>1 star</div></div>
+        <div class="review-middle-side">
+          <div class="review-bar-container"><div class="review-bar-1"></div></div>
+        </div>
+        <div class="review-left-side review-right-side"><div class="review-1-star-count">&nbsp;</div></div>
+      </div>
+      
+      <hr style="border:3px solid #f1f1f1;margin:5px 0px;" />
+      <div class="amazon-product-user-reviews"></div>
+      
+      <div class="review_navigation_button">
+        <button class="review_prev_button review_btn">Previous</button>
+        <button class="review_next_button review_btn">Next</button>
+        <span class="loading-amazon-reviews"><i class="fa fa-spinner fa-spin" style="font-size:30px"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

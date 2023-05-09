@@ -1,0 +1,58 @@
+{%comment%}
+{% if template == 'index' %}
+  {%- assign newsletter_text= 'Garden Of The Gods, Co'  -%}
+  {%- assign page_background = ' '  -%}
+  {%- assign newsletter_content_text = 'Sign up for the latest R&R updates, promotions, new product releases, and receive a 20% off rrmeds.com code!'  -%}
+{% else %}
+  {%- assign page_background = 'jc-newsletter-section-products'  -%}
+  {%- assign newsletter_text= 'Aspen, Co'  -%}
+  {%- assign newsletter_content_text = 'Sign up for the latest R&R updates, promotions, new product releases, and receive a 20% off rrmeds.com code!'  -%}
+{% endif %}
+
+
+  
+
+
+
+<div class="jc-newsletter-section {{ page_background }}">
+  <div class="newsletter-container">
+
+    <div class="jc-newsletter-content-wrapper img">
+      <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-footer_AST_photo_1_man_with_dog.jpg?v=1658253744" class="newsletter-img">
+    </div>
+
+    <div class="jc-newsletter-content-wrapper">
+      <div class="jc-newsletter-heading-wrapper">
+        <h4 class="jc-newsletter-sub-heading left {{font_color}}">SAVE 20%</h4>
+        <h3 class="jc-section-heading left{{font_color}}">Connect With Us!</h3>
+      </div> 
+      <p class="jc-newsletter-content-text {{font_color}}">{{ newsletter_content_text }}</p>
+      <div class="jc-newsletter-form-block w-form">
+        <div class="klaviyo-form-XphCMC"></div>
+        {% comment %}
+        {% form 'customer' %}
+        {% if form.posted_successfully? %}
+        <div class="jc-form-done">
+          <div>Thank you for signing up for the R&R Medicinals Mailing List!<br><br>
+            If you haven’t received an email from us within 15 minutes of submitting your email address, please check your spam and promotions folders for an email from contact@rrmeds.com.
+          </div>
+        </div>
+        {% else %}
+          <input type="hidden" name="contact[accepts_marketing]" value="true">
+          <div class="jc-newsletter-form-group">
+            <input type="email" class="jc-newsletter-input w-input {{border_color}}" maxlength="256" name="contact[email]" data-name="Email" placeholder="Your Email Address" id="email" required="">
+            <input type="submit" value="Sign Up" data-wait="Please wait..." class="jc-newsletter-submit-btn w-button">
+          </div>
+          {% endif %}
+        {% endform %}
+        {% endcomment %}     
+      </div>
+    </div>
+
+  </div>
+
+  {% comment %}
+  <div class="jc-section-location-text {{ newsletter_text_class }}">{{ newsletter_text }}</div>
+  {% endcomment %}
+</div>
+{%endcomment%}

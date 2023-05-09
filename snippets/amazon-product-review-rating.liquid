@@ -1,0 +1,68 @@
+{% if cssAdded == true %}
+{% else %}
+<style type="text/css">
+  .stars-empty{
+    display: flex;
+    position: relative;
+  }
+  .stars-filled{
+    display: flex;
+    position: absolute;
+    overflow:hidden;
+    top: 0px;
+    left:0px;
+  }
+  .review-overview-rating-stars{
+    display:inline-block;
+    position:relative;
+  }
+
+  .review-overview-rating-stars .stars-empty .fa{
+    color:#bbb;
+  }
+
+  .review-overview-rating-stars .stars-filled span.review-star-checked{
+    color:orange;
+  }
+  .amazon-product-review-rating{
+    margin:5px 0px 10px;
+    /*text-align:left !important;*/
+    visibility:hidden;
+  }
+</style>
+{% assign cssAdded = true %}
+{% endif %}
+
+{% assign total_amazon_reviews = 0 %}
+{% assign average_amazon_rating = 0.00 %}
+{% assign amazon_rating_div_display = 'none' %}
+{% assign stars_filled_width = '' %}
+{% if product.metafields["amazonproductreviews"].review_count and product.metafields["amazonproductreviews"].rating_value %}
+  {% assign total_amazon_reviews = product.metafields["amazonproductreviews"].review_count %}
+  {% assign average_amazon_rating = product.metafields["amazonproductreviews"].rating_value | plus: 0.00 %}
+  {% assign amazon_rating_div_display = 'block' %}
+  {% assign stars_filled_width = average_amazon_rating | times: 100 %}
+  {% assign stars_filled_width = stars_filled_width | divided_by: 5 %}
+{% endif %}
+<div product-id="{{ product.id }}" class="amazon-product-review-rating ratings_{{ product.id }}" style="display:{{amazon_rating_div_display}};text-align:left;">
+  <span class="review-overview-rating">
+    <div class="review-overview-rating-stars">
+      <div class="stars-empty">
+        <span class="fa fa-star review-star-icon"></span>
+        <span class="fa fa-star review-star-icon"></span>
+        <span class="fa fa-star review-star-icon"></span>
+        <span class="fa fa-star review-star-icon"></span>
+        <span class="fa fa-star review-star-icon"></span>
+        
+        <div class="stars-filled" {% if stars_filled_width %}style="width:{{stars_filled_width}}%;"{% endif %}>
+          <span class="fa fa-star review-star-icon review-star-checked"></span>
+          <span class="fa fa-star review-star-icon review-star-checked"></span>
+          <span class="fa fa-star review-star-icon review-star-checked"></span>
+          <span class="fa fa-star review-star-icon review-star-checked"></span>
+          <span class="fa fa-star review-star-icon review-star-checked"></span>
+        </div>
+      </div>
+    </div>
+    <span class="reviewTotalNumber" style="font-size:16px;">{{total_amazon_reviews}} reviews</span>
+  </span>
+</div>

@@ -1,0 +1,37 @@
+<script type="text/javascript">
+	$(document).ready(function() { 
+
+		function incrementDown() {
+
+		    $('.jc-js-quantity-selector').val( function(i, oldval) {
+		        return --oldval;
+		    });
+		}
+
+		function incrementUp() {
+
+		    $('.jc-js-quantity-selector').val( function(i, oldval) {
+		        return ++oldval;
+		    });
+		}
+
+
+		$("#jc-quantity-btn-down").click(function(){
+		  incrementDown();
+		});
+
+		$("#jc-quantity-btn-up").click(function(){
+		  incrementUp();
+		});
+
+		$(".jc-quantity-btn").hover(function(){
+		  var breaker = $(this).find('.jc-quantity-btn-breaker');
+		  breaker.css("background-color", "#ffffff");
+		  }, function(){
+		  var breaker = $(this).find('.jc-quantity-btn-breaker');
+		  breaker.css("background-color", "#0049434d");
+		});
+
+ 	});
+
+</script>

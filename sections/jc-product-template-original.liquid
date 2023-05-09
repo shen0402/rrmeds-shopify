@@ -1,0 +1,311 @@
+
+{% comment %}
+{% assign endVideoUrlEncoded = fullVideoUrl | url_decode  %}
+{% endcomment %}
+<!-- https://www.youtube.com/embed/5bFsz85UzYs?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0 -->
+
+<!-- 
+<div class="jc-product-page-wrapper">
+  <div class="jc-container-large">
+    <div class="jc-breadcrumb-wrapper">
+      <a href="/" class="jc-breadcrumb-link">Home</a>
+      <div class="jc-breadcrumb-breaker">»</div>
+      <a href="/collections/all-products" class="jc-breadcrumb-link">All Products</a>
+      <div class="jc-breadcrumb-breaker">»</div>
+      <a href="#" class="jc-breadcrumb-link">{{ product.title }}</a>
+    </div> 
+    <div class="jc-product-page-content-wrapper">
+      <div class="jc-product-page-row-outer w-row">
+        <div class="jc-product-page-col-left w-col w-col-6">
+          <div class="jc-product-page-img-section-wrapper">
+            <div data-animation="slide" data-nav-spacing="8" data-duration="500" data-infinite="1" class="jc-product-page-slider w-slider">
+              <div class="w-slider-mask">
+                {% for image in product.images %}
+                  {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                    <div class="w-slide">
+                      <div class="jc-product-page-slider-inner">
+                        <div class="jc-product-page-img-block">
+                          <img src="{{ image | img_url: '1100x1100' }}" alt="" class="jc-product-page-img">
+                        </div>
+                      </div>
+                    </div>
+
+                {% endfor %}
+              </div>
+              <div class="jc-product-page-slider-arrow w-slider-arrow-left">
+                <div class="w-icon-slider-left"></div>
+              </div>
+              <div class="jc-product-page-slider-arrow w-slider-arrow-right">
+                <div class="w-icon-slider-right"></div>
+              </div>
+              <div class="jc-product-page-slide-nav w-slider-nav w-round"></div>
+              <div class="jc-product-nav-wrapper">
+                <div class="jc-product-slide-nav-flex-col">
+                  <a href="#" class="jc-product-slide-flex-link w-inline-block" data-ix="jc-product-video-modal-open"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/play2-min.png" alt="Play Button" class="jc-product-slide-flex-img"></a>
+                  <div class="jc-product-page-video-modal">
+                    <div class="jc-product-page-video-modal-content-wrapper">
+                      <div style="padding-top:56.17021276595745%" id="w-node-846214b5d962-145ef2b7" class="w-embed-youtubevideo">
+                        <iframe src="{{ fullVideoUrl }}" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                      </div>
+                    </div>
+                    <a href="#" class="jc-product-page-video-modal-close-btn" data-ix="jc-product-video-modal-close">X</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="jc-product-page-btn-wrapper-alt">
+              <a href="{{ labResults.url }}" class="jc-product-page-btn-alt w-button" target="_blank">View Lab Results</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div> 
+</div> 
+-->
+
+
+<div class="jc-product-page-wrapper" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign price = current_variant.price -%}
+  
+
+  {% assign subHeading = product.metafields.subHeading %}
+  {% assign key = 'heading' %}
+
+  {% assign labResults = product.metafields.labResults %}
+  {% assign key = 'url' %}
+
+  {% assign productVideo = product.metafields.productVideo %}
+  {% assign key = 'videoId' %}
+
+  {% assign initialVideoUrl = 'https://www.youtube.com/embed/' %}
+  {% assign uniqueVideoId =  productVideo.videoId %}
+  {% assign endVideoUrl = '?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0' %}
+  {% capture fullVideoUrl  %}
+  {{ initialVideoUrl | append: uniqueVideoId | append: endVideoUrl }}
+  {% endcapture %}
+
+    <div class="jc-container-large">
+      <div class="jc-breadcrumb-wrapper"><a href="/" class="jc-breadcrumb-link">Home</a>
+        <div class="jc-breadcrumb-breaker">/</div><a href="/collections/all-products" class="jc-breadcrumb-link">All Products</a>
+        <div class="jc-breadcrumb-breaker">/</div><a href="#" class="jc-breadcrumb-link">{{ product.title }}</a>
+      </div>
+      <div class="jc-product-page-content-wrapper">
+        <div class="jc-product-page-row-outer w-row">
+          <div class="jc-product-page-col-left w-col w-col-6">
+            <div class="jc-product-page-img-section-wrapper">
+              <div data-animation="slide" data-nav-spacing="8" data-duration="500" data-infinite="1" class="jc-product-page-slider w-slider">
+                <div class="w-slider-mask">
+
+               
+                  {% for image in product.images %}
+                    {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                      <div class="w-slide">
+                        <div class="jc-product-page-slider-inner">
+                          <div class="jc-product-page-img-block">
+                            <img src="{{ image | img_url: '1100x1100' }}" alt="" class="jc-product-page-img">
+                          </div>
+                        </div>
+                      </div>
+
+                  {% endfor %}
+                
+                 
+
+                </div> 
+                <div class="jc-product-page-slider-arrow w-slider-arrow-left">
+                  <div class="w-icon-slider-left"></div>
+                </div>
+                <div class="jc-product-page-slider-arrow w-slider-arrow-right">
+                  <div class="w-icon-slider-right"></div>
+                </div>
+                <div class="jc-product-page-slide-nav w-slider-nav w-round"></div>
+
+                <div class="jc-product-nav-wrapper">
+
+
+                  <div class="jc-product-slide-nav-flex-col"><a href="#" class="jc-product-slide-flex-link w-inline-block" data-ix="jc-product-video-modal-open"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/play2-min.png" alt="Play Button" class="jc-product-slide-flex-img"></a>
+                    <div class="jc-product-page-video-modal">
+                      <div class="jc-product-page-video-modal-content-wrapper">
+                        <div style="padding-top:56.17021276595745%" id="w-node-846214b5d962-145ef2b7" class="w-embed-youtubevideo"><iframe src="{{ fullVideoUrl }}" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+                      </div><a href="#" class="jc-product-page-video-modal-close-btn" data-ix="jc-product-video-modal-close">X</a></div>
+                  </div>
+                 
+
+                </div>
+
+              </div>
+              <div class="jc-product-page-btn-wrapper-alt">
+                <a href="{{ labResults.url }}" class="jc-product-page-btn-alt w-button" target="_blank">View Lab Results</a>
+              </div>
+            </div>
+          </div> <!-- -->
+
+
+          <div class="jc-product-page-content-col w-col w-col-6">
+            <div class="jc-product-page-content-col-inner">
+              <div class="jc-product-page-heading-wrapper">
+                <h1 class="jc-product-page-heading">{{ product.title }}</h1>
+                <h2 class="jc-product-sub-heading">{{ subHeading.heading }}</h2>
+              </div>
+              <div class="rte jc-product-page-description-text">
+                {{ product.description }}
+              </div>
+
+              <div class="product__price">
+                {% include 'product-price', variant: current_variant %}
+              </div>
+
+              <div class="jc-product-page-form-wrapper">
+               
+                
+
+                
+                {% capture "form_id" %}AddToCartForm--{{ section.id }}{%- endcapture %}
+                {% form 'product', product, id:form_id, novalidate: 'novalidate' %}
+                    <div class="jc-product-page-options-wrapper">
+
+                      
+
+                     
+                    {% unless product.has_only_default_variant %}
+                     {% for option in product.options_with_values limit:2 %}
+                     <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="{{ option.name | handleize }}">
+                     {% assign outerIndex = forloop.index %}
+                      <div class="jc-product-page-flex-row">
+
+                        <div class="jc-product-page-flex-col jc-product-page-flex-col-heading">
+                          <h4 class="jc-product-page-col-heading">{{ option.name | escape }}</h4>
+                        </div>
+
+                        {% for value in option.values %}
+                          <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
+                            <div class="jc-product-page-input-wrapper w-embed">
+                              <input type="radio"
+                                          {% if option.selected_value == value %} checked="checked"{% endif %}
+                                          value="{{ value | escape }}"
+                                          data-index="option{{ forloop.index }}"
+                                          name="{{ option.name | handleize }}"
+                                          id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
+                                          class="">
+                              <label class="jc-product-page-input-label" for="{{ value }}">{{ value | escape }}</label>
+                              
+
+                            </div>
+                          </div>
+                        {% endfor %}
+                        </div>
+                       </fieldset>
+                      {% endfor %} 
+                    {% endunless %}
+                  
+
+
+                    <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+                      {% for variant in product.variants %}
+                        {% if variant.available %}
+                          <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                            {{ variant.title }}
+                          </option>
+                        {% else %}
+                          <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+                      
+                      <div class="jc-product-page-flex-row">
+                        <div class="jc-product-page-flex-col jc-product-page-flex-col-heading">
+                          <h4 class="jc-product-page-col-heading">Purchase</h4>
+                        </div>
+                        <div class="jc-product-page-flex-col jc-product-page-flex-col-input jc-product-page-flex-col-jnput-alt">
+                          <div class="jc-product-page-input-wrapper w-embed"><input class="jc-product-page-input" type="radio" value="One-Time-Purchase" id="One-Time-Purchase" name="product-purchase-type">
+                            <label class="jc-product-page-input-label" for="0ne-Time-Purchase">One Time Purchase</label></div>
+                        </div>
+                        <div class="jc-product-page-flex-col jc-product-page-flex-col-input jc-product-page-flex-col-jnput-alt">
+                          <div class="jc-product-page-input-wrapper w-embed"><input class="jc-product-page-input" type="radio" value="Recurring-Subscription" id="Recurring-Subscription" name="product-purchase-type">
+                            <label class="jc-product-page-input-label" for="Recurring-Subscription">Recurring Subscription</label></div>
+                        </div>
+                      </div>
+
+                      <div class="jc-product-page-flex-row">
+                        <div class="jc-product-page-flex-col jc-product-page-flex-col-heading">
+                          <h4 class="jc-product-page-col-heading">Quantity</h4>
+                        </div>
+                        <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
+                          <div class="jc-product-quantity-wrapper"><a href="#" class="jc-quanity-btn"></a>
+                            <div class="jc-quantity-amt">1</div><a href="#" class="jc-quanity-btn"></a></div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="jc-product-page-btn-wrapper">
+                      <button type="submit" class="jc-product-page-btn w-button">Add To Cart - <span class="price-item price-item--regular" data-regular-price>{{ money_price }}</span></button>
+                    </div>       
+
+            {% endform %}
+           
+
+            </div>
+
+              <div class="jc-product-page-disclaimer-wrapper"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/30_day_trial-min-p-500.png" alt="60 Day Risk Free Trial" src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/30_day_trial-min-p-500.png" class="jc-product-page-disclaimer-img">
+                <p class="jc-product-page-disclaimer-text">We stand behind the quality of our products, and we’re confident that you’ll have a blissful experience with them. Try them for a couple of weeks, and if for any reason you’re dissatisfied with our products, you’re welcome to ask us for a full refund within 60 Days of your purchase.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jc-product-page-bottom-tabs-wrapper">
+          <div data-duration-in="300" data-duration-out="100" class="jc-product-page-bottom-tabs w-tabs">
+            <div class="jc-product-page-bottom-tabs-menu w-tab-menu">
+              <a data-w-tab="Tab 1" class="jc-product-page-bottom-tabs-menu-link w-inline-block w-tab-link w--current">
+                <div>Product Details</div>
+              </a>
+              <a data-w-tab="Tab 2" class="jc-product-page-bottom-tabs-menu-link w-inline-block w-tab-link">
+                <h4>Directions</h4>
+              </a>
+              <a data-w-tab="Tab 3" class="jc-product-page-bottom-tabs-menu-link w-inline-block w-tab-link">
+                <h4>Ingredients</h4>
+              </a>
+              <a data-w-tab="Tab 4" class="jc-product-page-bottom-tabs-menu-link w-inline-block w-tab-link">
+                <h4>Safety/Lab Test</h4>
+              </a>
+            </div>
+            <div class="w-tab-content">
+              <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                <div class="jc-product-page-bottom-tabs-inner">
+                  <p class="jc-product-page-bottom-tabs-text">This boosted, extra strength blend is 2x more potent than our daily use hemp oil (500mg) and gives you a stronger, natural way to relieve chronic pain, inflammation, improve sleep patterns, and more!</p>
+                  <p class="jc-product-page-bottom-tabs-text">One serving (40 drops) of the dropper delivers a 36mg serving of hemp extract! Our full phytonutrient blend provides a complete entourage effect that includes natural terpenes, flavonoids, antioxidants, and phytonutrients. Our formula is packed with essential omega fatty acids and calming essential peppermint oil. Roughly a 30-day supply!</p>
+                </div>
+              </div>
+              <div data-w-tab="Tab 2" class="w-tab-pane">
+                <div class="jc-product-page-bottom-tabs-inner">
+                  <div class="tab-content-bottom-media-holder">
+                    <div style="padding-top:56.17021276595745%" id="w-node-13bc583798e0-145ef2b7" class="w-embed-youtubevideo"><iframe src="https://www.youtube.com/embed/5bFsz85UzYs?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+                  </div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 3" class="w-tab-pane">
+                <div class="jc-product-page-bottom-tabs-inner">
+                  <p class="jc-product-page-bottom-tabs-text">Full Spectrum Hemp Oil Extract, MCT Oil From Coconut, Natural Mint Flavoring, Sunflower Oil</p>
+                </div>
+              </div>
+              <div data-w-tab="Tab 4" class="w-tab-pane">
+                <div class="jc-product-page-bottom-tabs-inner">
+                  <p class="jc-product-page-bottom-tabs-text">Check with your doctor or physician before ingesting any herbal supplements. Consumption of herbal ingredients may cause allergies in certain individuals. If you have a known medical condition, you should consult with a healthcare professional before using this or any dietary supplement. If you have a history of allergies to herbal ingredients, do not consume this product. If pregnant, breastfeeding, or taking a prescribed medication, consult your doctor or physician before use.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div> 
+{% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}

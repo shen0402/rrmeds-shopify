@@ -1,0 +1,64 @@
+<div class="welcome-hero-wrapper campaign wf-section">
+    <div class="campaign-grid">
+      <div id="w-node-_52d614fe-dc7a-1788-3d03-f6743c5574dd-0ea60585" class="campaign-clock-wrapper">
+        <div class="html-clock-embed w-embed"><img src="{{section.settings.banner}}" alt="motionmailapp.com"></div>
+      </div>
+      <div id="w-node-d3254290-5c53-fa3b-6cf9-bfbf3183d942-0ea60585" class="campaign-img-wrapper" {% if section.settings.bg_img %} style="background-image: url({{section.settings.bg_img | image_url }})"{%endif%}></div>
+      <div class="campaign-hero-content-col">
+        <div class="campagin-hero-content-wrapper">
+          <h1 class="campaign-header" data-ix="fadeinright">{{section.settings.main_heading}}</h1>
+          <p class="campaign-hero-p" data-ix="fadeinright">{{section.settings.sub_heading}}</p>
+          <a href="{{section.settings.btn_url}}" class="green-campaign-btn w-button" data-ix="fadeinright">{{section.settings.btn_text}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  {% schema %}
+{
+"name": "Campaign Section" ,
+"settings": [
+    {
+        "label": "Banner",
+        "id": "banner",
+        "default": "https://s.mmgo.io/t/Ca4k/scale_3x",
+        "type": "text"
+    },
+    {
+     "label": "Main Heading",
+     "id": "main_heading",
+     "default": "One Day Only",
+     "type": "text"
+    },
+    {
+     "label": "Sub Heading",
+     "id": "sub_heading",
+     "default": "Shop <strong>20% OFF</strong> as part of our SMS crew for one day only.",
+     "type": "textarea"
+    },
+
+
+    {
+     "label": "Button Url",
+        "id": "btn_url",
+        
+        "type": "url"
+    },
+    {
+        "label": "Button Text",
+           "id": "btn_text",
+           "default": "SHOP THE SALE",
+           "type": "text"
+       },
+       {
+        "label": "Background Image",
+           "id": "bg_img",
+           
+           "type": "image_picker"
+       }
+
+]
+}
+{% endschema %}

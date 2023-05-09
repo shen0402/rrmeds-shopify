@@ -1,0 +1,18 @@
+
+  <div class="jc-fixed-bar-mobile-wrapper">
+    <div class="jc-fixed-bar-link"><strong>{{section.settings.banner_text}}</strong></div>
+  </div>
+  
+  {% schema %}
+    {
+      "name": "Mobile Header" ,
+        "settings": [
+          {
+             "type": "richtext",
+             "id": "banner_text",
+             "default": "<p>FREE SHIPPING ON ALL DOMESTIC ORDERS!</p>",
+             "label": "Banner Text"
+          }
+      ]
+    }
+  {% endschema %}

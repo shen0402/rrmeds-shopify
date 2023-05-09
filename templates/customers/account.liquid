@@ -1,0 +1,409 @@
+<div id='frcp_app_wrapper' class='frcp-app-wrapper'></div>
+<!-- /templates/customers/account.liquid -->
+{% comment %}
+
+  For all available customer liquid tags:
+    - http://docs.shopify.com/themes/liquid-variables/customer
+
+{% endcomment %}
+{% comment %}
+
+
+<header class="section-header text-center">
+  <h1>{{ 'customer.account.title' | t }}</h1>
+{% include 'fresh-credit-button' %}
+
+  {{ 'layout.customer.log_out'| t | customer_logout_link }}
+  <hr class="hr--small">
+</header>
+
+<div class="grid">
+
+  <div class="grid__item two-thirds medium-down--one-whole">
+    <h2 class="h3">{{ 'customer.orders.title' | t }}</h2>
+    {% endcomment %}
+    {% comment %}
+      If we have past orders, loop through each one
+    {% endcomment %}
+    {% comment %}
+    {% if customer.orders.size != 0 %}
+
+      <div class="table-wrap">
+        <table class="full table--responsive">
+          <thead>
+            <tr>
+              <th>{{ 'customer.orders.order_number' | t }}</th>
+              <th>{{ 'customer.orders.date' | t }}</th>
+              <th>{{ 'customer.orders.payment_status' | t }}</th>
+              <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+              <th>{{ 'customer.orders.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in customer.orders %}
+              <tr class="table__section">
+                <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+                <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: 'date' }}</td>
+                <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+                <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="hr--clear">
+
+    {% else %}
+
+      <p>{{ 'customer.orders.none' | t }}</p>
+
+    {% endif %}
+  </div>
+
+  <div class="grid__item one-third medium-down--one-whole">
+    <h3>{{ 'customer.account.details' | t }}</h3>
+<p><a href="/tools/checkout/front_end/login" class="text-link">Manage Subscription</a></p>
+
+    {{ customer.default_address | format_address }}
+
+    <p><a href="/account/addresses" class="text-link">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+  </div>
+
+</div>
+
+
+{% endcomment %}
+
+
+
+
+{% paginate customer.orders by 20 %}
+
+
+<script type="text/javascript">
+  $(document).ready(function() { 
+
+    $('.flex-col-link-account-pw').click(function(){
+      
+      $('.order-section-account').hide();
+      $('.forgot-pw-section-account').show();
+      
+    });
+    
+
+   });
+</script>
+
+
+<div class="jc-account-page-wrapper">
+  <div class="jc-container-large">
+    <div class="col-wrapper account">
+
+
+      <div class="flex-col-outer-account-1">
+
+        <div class="flex-col-heading-wrapper-account">
+          <h1 class="section-heading-alt">Welcome{% unless customer.first_name == blank %}, {{customer.first_name}}!{% endunless %}</h1>
+        </div>
+
+          <div class="flex-col-menu-wrapper-account">
+
+            <div class="account-page-mid-btn-holder">
+                <a href="#order-history" class="logout-link">
+                  Order History
+                </a>
+            </div>
+         
+            <div class="flex-col-link-wrapper-account">
+              <!-- Begin Recharge code -->
+              <div class="jc-medium-btn-section left"><p><a class="logout-link" href="/tools/recurring/login/">Manage Subscriptions</a></p></div>
+              <!-- End Recharge code -->
+            </div>
+            
+            <div class="flex-col-link-wrapper-account">
+            
+                <a href="#" class="logout-link flex-col-link-account-pw w-inline-block">
+                  <div>Reset Password</div>
+                </a>
+              
+            </div>
+
+            <div class="forgot-pw-section-account">
+            
+              {% form 'recover_customer_password' %}
+                <div class="order-section-heading-account">
+                  <h3 class="section-heading-sm">Reset Your Password</h3>
+                </div>
+                 <input type="email" class="form-input-login w-input" maxlength="256" name="email"  placeholder="Email" id="RecoverEmail" required="">
+                 <div class="form-btn-wrapper-login"><input type="submit" value="Submit" data-wait="Please wait..." class="jc-medium-btn less-padding no-p-l w-button"></div>
+               {% endform %}
+      
+          </div>
+
+            <div class="account-page-mid-btn-holder">
+                <a href="/account/logout" class="logout-link">
+                  Log Out
+                </a>
+            </div>
+
+          </div>
+
+      </div>
+
+
+ 
+
+      {%comment%}
+    <div class="wrapper-left">
+      <div class="jc-account-order-section-heading-wrapper">
+        <h1 class="jc-footer-col-heading small-black">Welcome {% unless customer.first_name == blank %}, {{customer.first_name}}!{% endunless %}</h1>
+
+        <div class="account-page-mid-btn-holder">
+          <a href="/account/logout" class="logout-link">Logout</a>
+        </div>
+
+      </div>
+      {%comment%}
+      <p class="paragraph-text">You don't have any active autoship subscriptions yet.</p>
+      {%endcomment%}
+
+
+      <!-- Begin Recharge code -->
+      <div class="jc-medium-btn-section left"><p><a class="logout-link" href="/tools/recurring/login/">Manage Subscriptions</a></p></div>
+      <!-- End Recharge code -->
+
+
+
+      {%comment%}
+      <div class="jc-medium-btn-section left"><p><a href="#" class="jc-medium-btn account w-button no-margin">Manage Subscription</a></p></div>
+
+      <div class="jc-medium-btn-section left"><a href="/tools/checkout/front_end/login" class="jc-medium-btn account w-button no-margin">Manage Auto Shipments</a>
+      {%endcomment%}
+
+      
+    </div>  <!-- wrapper-left-->
+    {%endcomment%}
+    <div class="wrapper-right">
+
+      <div class="jc-account-rewards-content-wrapper">
+        <div class="jc-account-rewards-heading-wrapper">
+          <h3 class="jc-footer-col-heading">Your Rewards</h3>
+
+        </div>
+        <div class="jc-account-rewards-mid-wrapper">
+          <div class="jc-account-rewards-text">You Have</div>
+          <div class="jc-account-rewards-main-text">{% if customer %}<span class="sweettooth-points-balance"></span>{% endif %}</div>
+          <div class="jc-account-rewards-text">Rewards Points</div>
+        </div>
+
+        <div class="jc-medium-btn-section"><a href="/account/#smile-home" class="jc-medium-btn account w-button hollow">Redeem Your Points</a></div>
+
+      </div>
+
+
+    </div>
+    </div>
+  </div> <!-- jc-container-large-->
+
+
+  <div class="order-history-scroll" id="order-history"></div>
+  <div class="jc-account-rewards-section">
+    <div class="jc-account-rewards-container">
+
+
+      <div class="jc-account-order-section">
+      
+        <h2 class="jc-account-order-section-heading">Order History</h2>
+    
+    
+        {% if customer.orders.size != 0 %}   
+        <div class="jc-account-order-flex-row">
+          <div class="jc-account-order-flex-col">
+            <div class="jc-account-order-flex-col-heading-text">Order Number</div>
+          </div>
+          <div class="jc-account-order-flex-col">
+            <div class="jc-account-order-flex-col-heading-text">Date</div>
+          </div>
+          <div class="jc-account-order-flex-col">
+            <div class="jc-account-order-flex-col-heading-text">Total Cost</div>
+          </div>
+      </div>
+
+
+      {% for order in customer.orders %}
+
+      {% assign reorder_url = "" %}
+          {% for line_item in order.line_items %}
+            {% capture reorder_url %}{{ reorder_url | append: line_item.variant_id | append: ':' | append: line_item.quantity | append: ',' }}{% endcapture %}
+        {% endfor %}
+
+        <div class="jc-account-order-flex-row">
+            <div class="jc-account-order-flex-col">
+              <div class="jc-account-order-flex-col-text"><a href="{{order.customer_url}}" class="jc-account-order-flex-col-text-link">{{ order.name }}</a></div>
+              <div class="jc-account-order-reorder-wrapper"><a href="{{ '/cart/' | append: reorder_url }}" class="jc-account-order-reorder-btn">Reorder</a></div>
+            </div>
+            <div class="jc-account-order-flex-col">
+              <div class="jc-account-order-flex-col-text">{{ order.created_at | date: format: 'date' }}</div>
+            </div>
+            <div class="jc-account-order-flex-col">
+              <div class="jc-account-order-flex-col-text">{{ order.total_price | money }}</div>
+            </div>
+        </div>
+
+      {% endfor %}
+      {% comment %}
+      <div class="jc-account-order-flex-row">
+          <div class="jc-account-order-flex-col">
+            <div class="jc-account-order-flex-col-text"><a href="#" class="jc-account-order-flex-col-text-link">1001</a></div>
+          </div>
+          <div class="jc-account-order-flex-col">
+            <div class="jc-account-order-flex-col-text">04/12/2019</div>
+          </div>
+          <div class="jc-account-order-flex-col">
+            <div class="jc-account-order-flex-col-text">$42.99</div>
+          </div>
+      </div>
+      {% endcomment %}
+
+  
+  {% else %}
+    
+      <div class="jc-account-page-empty-wrapper">
+        <p class="jc-account-page-empty-text">You haven't placed any orders yet</p>
+      </div>
+
+  {% endif %}
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+  {% endpaginate %}
+
+    </div> <!-- jc-account-order-section -->
+      
+     
+
+    </div>
+  </div>
+
+{% comment %}
+  <div class="jc-account-bottom-row-section">
+    <div class="jc-account-bottom-row-container">
+      <div class="jc-account-bottom-row w-row">
+        <div class="jc-account-bottom-col w-col w-col-3">
+          <div class="jc-account-bottom-col-inner">
+            <div class="jc-account-bottom-col-heading-wrapper">
+              <h3 class="jc-account-bottom-col-heading">Your Account</h3>
+              <div class="jc-section-heading-hr"></div>
+              <div class="jc-section-heading-hr jc-section-heading-hr-bottom"></div>
+            </div>
+            <a href="/account/logout" class="jc-account-bottom-col-link-block w-inline-block">
+              <div>Log Out</div>
+            </a>
+           
+          </div>
+        </div>
+        <div class="jc-account-bottom-col w-col w-col-3">
+          <div class="jc-account-bottom-col-inner">
+            <div class="jc-account-bottom-col-heading-wrapper">
+              <h3 class="jc-account-bottom-col-heading">Your Subscriptions</h3>
+              <div class="jc-section-heading-hr"></div>
+              <div class="jc-section-heading-hr jc-section-heading-hr-bottom"></div>
+            </div>
+            <a href="#" class="jc-account-bottom-col-link-block w-inline-block">
+              <div>Manage Subscriptions</div>
+            </a>
+            <a href="#" class="jc-account-bottom-col-link-block w-inline-block">
+              <div>Learn About Subscriptions</div>
+            </a>
+          </div>
+        </div>
+        <div class="jc-account-bottom-col w-col w-col-3">
+          <div class="jc-account-bottom-col-inner">
+            <div class="jc-account-bottom-col-heading-wrapper">
+              <h3 class="jc-account-bottom-col-heading">Your Rewards</h3>
+              <div class="jc-section-heading-hr"></div>
+              <div class="jc-section-heading-hr jc-section-heading-hr-bottom"></div>
+            </div>
+            <a href="#" class="jc-account-bottom-col-link-block w-inline-block">
+              <div>View Rewards Balance</div>
+            </a>
+            <a href="#" class="jc-account-bottom-col-link-block w-inline-block">
+              <div>Sign up for Rewards Program</div>
+            </a>
+          </div>
+        </div>
+        <div class="jc-account-bottom-col w-col w-col-3">
+          <div class="jc-account-bottom-col-inner">
+            <div class="jc-account-bottom-col-heading-wrapper">
+              <h3 class="jc-account-bottom-col-heading">Your Discounts</h3>
+              <div class="jc-section-heading-hr"></div>
+              <div class="jc-section-heading-hr jc-section-heading-hr-bottom"></div>
+            </div>
+            <a href="#" class="jc-account-bottom-col-link-block w-inline-block">
+              <div>Military</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- jc-account-bottom-row-section -->
+  {% endcomment %}
+  
+</div> <!-- jc-account-page-wrapper -->
+
+<script type="text/javascript">
+  $(document).ready(function() { 
+
+    var url = window.location.href;
+    var height = 120;
+
+    if (url == 'https://www.rrmeds.com/account?rewards') {
+       $('html, body').animate({
+        scrollTop: $('.jc-account-rewards-section').offset().top-height
+      }, 1000);
+    }
+
+    });
+</script>
+<style type="text/css">
+  .jc-credit-btn-wrapper {
+    text-align: center;
+  }
+  .jc-credit-btn-wrapper button#fresh-credit-open {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 1px;
+    background-color: #000 !important;
+    -webkit-transition: background-color 250ms ease;
+    transition: background-color 250ms ease;
+    font-family: myriad-pro-condensed, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #fff;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .jc-credit-btn-wrapper button#fresh-credit-open:hover {
+    background-color: #7a0805 !important;
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function() { 
+
+    $('button#fresh-credit-open').removeAttr('style');
+
+    });
+</script>
+
+
+
+

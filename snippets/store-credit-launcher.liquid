@@ -1,0 +1,14 @@
+{% if customer %}
+    {% assign store_domain = shop.permanent_domain %}
+    {% assign storecredit_customer_id = customer.id %}
+    {% assign storecredit_customer_signature = customer.id | append: '0dcdc6e5fd5170f67a25cf20a0e2179d' | md5 %}
+
+	<script>
+		window.StoreCreditInit = {
+			shop: '{{ store_domain }}',
+			customer_id: '{{ storecredit_customer_id }}',
+			customer_signature: '{{ storecredit_customer_signature }}'
+		}
+	</script>
+{% endif %}
+

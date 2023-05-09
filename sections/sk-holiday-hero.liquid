@@ -1,0 +1,112 @@
+<div class="section-2 wf-section">
+    <div data-delay="5000" data-animation="slide" class="slider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="100" data-nav-spacing="3" data-duration="500" data-infinite="true">
+      <div class="w-slider-mask">
+
+
+
+
+
+
+        <div class="w-slide">
+          <div class="inner-slider-wrapper _3">
+            <div class="collection-banner-left-home _3">
+              <div class="text-width">
+                <h4 class="collection-link-text holiday">THE CBD THAT WORKS™.</h4>
+                <h1 class="jc-section-heading medium holiday">We’re the Relief Experts</h1>
+                <p class="paragraph-light">We use locally and mindfully sourced organic ingredients to craft potent formulas aimed at addressing everyday stressors.</p>
+                <div class="jc-medium-btn-section left holiday extra-margin"><a href="{{section.settings.button_url_3}}" class="jc-medium-btn no-margin holiday w-button">{{section.settings.button_text_3}}</a></div>
+              </div>
+            </div>
+            <div class="collection-banner-right-home _3"></div>
+          </div>
+        </div>
+
+        <div class="w-slide">
+          <div class="inner-slider-wrapper">
+            <div class="collection-banner-left-home green">
+              <div class="text-width">
+                <h4 class="collection-link-text holiday margin-b">EXPERIENCE MAXIMUM RELIEF</h4>
+                <h1 class="jc-section-heading medium holiday">New 5000mg Tinctures</h1>
+                <p class="paragraph-light">Our most potent product ever. Feel your best with our new Fresh Mint or Unflavored Tinctures.</p>
+                <div class="jc-medium-btn-section left holiday extra-margin"><a href="https://www.rrmeds.com/products/tinctures?variant=42669261586630" class="jc-medium-btn no-margin holiday w-button">SHOP RELIEF</a></div>
+              </div>
+            </div>
+            <div class="collection-banner-right-home _4"></div>
+          </div>
+        </div>
+
+
+        {%- comment -%}
+          <div class="w-slide">
+            <div class="inner-slider-wrapper">
+              <div class="collection-banner-left-home">
+                <div class="text-width">
+                  <h4 class="collection-link-text holiday">TOPICAL, TARGETED RELIEF</h4>
+                  <h1 class="jc-section-heading medium holiday">New CBD Pain Creams</h1>
+                  <p class="paragraph-light">Try our soothing, fast-acting, and effective pain management formulas.</p>
+                  <div class="jc-medium-btn-section left holiday extra-margin"><a href="{{section.settings.button_url}}" class="jc-medium-btn no-margin holiday w-button">{{section.settings.button_text}}</a></div>
+                </div>
+              </div>
+              <div class="collection-banner-right-home _1"></div>
+            </div>
+          </div>
+        {%- endcomment -%}
+        
+        
+      </div>
+      <div class="left-arrow w-slider-arrow-left">
+        <div class="w-icon-slider-left"></div>
+      </div>
+      <div class="right-arrow w-slider-arrow-right">
+        <div class="w-icon-slider-right"></div>
+      </div>
+      <div class="slide-nav w-slider-nav w-round"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  {% schema %}
+{
+  "name": "Hero Slider Section" ,
+  "settings": [
+      {
+         "type": "text",
+         "id": "button_text",
+         "default": "Shop Now",
+         "label": "Button Text"
+      },
+      {
+         "type": "url",
+         "id": "button_url",
+         "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text_2",
+        "default": "Shop Now",
+        "label": "Button Text 2"
+     },
+     {
+        "type": "url",
+        "id": "button_url_2",
+        "label": "Button Link 2"
+     },
+     {
+        "type": "text",
+        "id": "button_text_3",
+        "default": "Shop Now",
+        "label": "Button Text 3"
+     },
+     {
+        "type": "url",
+        "id": "button_url_3",
+        "label": "Button Link 3"
+     }
+  ]
+}
+{% endschema %}

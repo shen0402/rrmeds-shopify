@@ -1,0 +1,300 @@
+	<!-- /templates/collection.liquid -->
+	{% comment %}
+	  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+
+
+	{% section 'collection-template' %}
+	{% endcomment %}
+
+	<div class="jc-products-mid-wrapper">
+	  
+		
+		
+
+		<div class="collection-menu-wrapper-outter">
+			<div class="collection-menu-wrapper">
+
+
+				{%comment%}
+				<a href="https://www.rrmeds.com/pages/holiday" class="collection-menu-link large">
+					<h4 class="collection-link-text" >Holiday Deals</h4>
+				  </a>
+				  {%endcomment%}
+				<a href="/collections/all-products" class="collection-menu-link large">
+					<h4 class="collection-link-text" >All Products</h4>
+					</a>
+					<a href="/collections/tinctures" class="collection-menu-link">
+					  <h4 class="collection-link-text" >tinctures</h4>
+					</a>
+					<a href="/collections/gummies" class="collection-menu-link">
+					<h4 class="collection-link-text" >Gummies</h4>
+					</a>
+					<a href="/collections/softgels" class="collection-menu-link">
+					  <h4 class="collection-link-text" >softgels</h4>
+					</a>
+					<a href="/collections/cbd-pain-creams" class="collection-menu-link">
+					<h4 class="collection-link-text" >Pain Creams</h4>
+					</a>
+					<a href="/collections/pet-products" class="collection-menu-link">
+					  <h4 class="collection-link-text" >For Pets</h4>
+					</a>
+					<a href="/collections/thc-free-products" class="collection-menu-link">
+					  <h4 class="collection-link-text" >THC-Free</h4>
+					</a>
+					<a href="#" class="collection-menu-link large summit-btn">
+					  <h4 class="collection-link-text" >Delta-9, HHC, & Delta-8</h4>
+					</a>
+
+				<div class="full-width-underline"></div>
+			</div>
+		</div>
+	    
+	    <div class="jc-container-mid">
+
+	    	<div class="jc-products-flex-row test-flex-row">
+
+	    	    {% for product in collection.products %}
+	    	      {% assign shortDescription = product.metafields.shortDescription %}
+	    	      {% assign key = 'description' %}
+	    	      {%- assign iteration_number = forloop.index -%}
+
+
+	    	          <div class="jc-products-flex-col jc-products-flex-col-custom">
+	    	            <div class="jc-product-section-col-inner">
+	    	            	<a href="{{ product.url }}" class="jc-product-section-overlay-link w-inline-block">
+	    	            	</a>
+        	    	      {% comment %}
+        					4447123537973 - CBD Gummies
+        	    	      {% endcomment %}
+	    	              {% if product.id == 4447123537973F %}
+	    	              	<div class="jc-product-section-img-wrapper collection" >
+								<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/products/Thumb_Main_HolidayDeals2022_Gummies_FS30mg_1500x.jpg?v=1670445168">
+							</div>
+	    	               {% comment %}
+          					6841769033926 - Products THC-Free Gummies
+          	    	      {% endcomment %}
+	    	              	{% elsif product.id == 6841769033926F %}
+	    	              		<div class="jc-product-section-img-wrapper collection">
+									<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/products/Thumb_Main_Gummies_FS_1500x.jpg?v=1669789796">
+								</div>		
+          	    	      {% comment %}
+          					3775056216117 - CBD Softgels
+          	    	      {% endcomment %}
+	    	              	{% elsif product.id == 3775056216117F %}
+	    	              		<div class="jc-product-section-img-wrapper collection">
+									<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/Thumb_Main_Holiday_Deals_2022_Softgels_FS_30mg.jpg?v=1670022477">
+								</div>
+	    	              {% comment %}
+          					6683040284870 - THC-Free Tincture (Fresh Mint)
+          	    	      {% endcomment %}
+	    	              	{% elsif product.id == 6683040284870F %}
+	    	              		<div class="jc-product-section-img-wrapper collection">
+									<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/Thumb_Main_Holiday_Deals_2022_Tincture_BS_FM_1000mg.jpg?v=1670022479">
+								</div>
+	    	              {% comment %}
+          					6683070496966 - THC-Free Softgels
+          	    	      {% endcomment %}
+	    	              	{% elsif product.id == 6683070496966F %}
+	    	              		<div class="jc-product-section-img-wrapper collection">
+									<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/Thumb_Main_Holiday_Deals_2022_Softgels_BS_30mg.jpg?v=1670022476">
+								</div>
+							{% comment %}
+          					4631247323189 - Cream
+          	    	      {% endcomment %}
+							{% elsif product.id == 4631247323189F %}
+							<div class="jc-product-section-img-wrapper collection">
+							  <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/Thumnails_Cream_FS_2000mg_Thumb_1_1.jpg?v=1668466939">
+						  </div>
+	    	              {% comment %}
+          					3775058051125 - CBD Pet Tincture
+          	    	      {% endcomment %}
+	    	              	{% elsif product.id == 3775058051125F %}
+	    	              		<div class="jc-product-section-img-wrapper collection">
+									<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/Thumb_Main_Tincture_PET_1000mg.jpg?v=1659048363">
+								</div>		
+							{% comment %}
+          					7706902626502 - THC-Free CBD Pain Cream
+          	    	      {% endcomment %}
+							{% elsif product.id == 7706902626502F %}
+							<div class="jc-product-section-img-wrapper collection">
+							  <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/Thumnails_Cream_BS1000mg_Thumb1_1500x_486ca9c8-26ec-4266-922a-a1707ce69c58.webp?v=1669052086">
+						  </div>	
+						  
+						{% comment %}
+          					3775015878709 - Full - Tincture - FM
+          	    	      {% endcomment %}
+						  {% elsif product.id == 3775015878709 %}
+						  <div class="jc-product-section-img-wrapper collection">
+							<img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/2500_tincture_542d4671-b29f-4625-8619-ec60e8ec20d2.jpg?v=1682718853">
+						</div>	
+
+						{% comment %}
+          					4453931843637 - Full - Tincture - UF
+          	    	      {% endcomment %}
+							{% elsif product.id == 4453931843637 %}
+							<div class="jc-product-section-img-wrapper collection">
+							  <img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/2500_tincture_Unflavored.jpg?v=1681949547">
+						  </div>	
+						
+
+	    	              {% else %}
+	    	              	<div class="jc-product-section-img-wrapper collection" >
+								<img src="{{ product.featured_image | img_url: '1024x' }}">
+							</div>
+	    	              {% endif %}		
+	    	              <div class="jc-product-section-bottom-wrapper">
+
+							<div class="product-title-and-img-wrapper">
+	    	                	<h4 class="jc-product-section-heading no-margin">{{product.title}}</h4>
+								{%comment%}
+								CBD Cream
+								4631247323189
+								{%endcomment%}
+								{%if product.id == 4631247323189 %}<div class="product-spacer"></div>{%endif%}
+								{% if  {{product.metafields.product.flavor}} == 'fresh-mint' %}
+									<img class="flavor-img" src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-lab_testing_AST_FM_tag.svg?v=1658945051">
+								{% endif %}
+								{% if {{product.metafields.product.flavor}} == 'unflavored' %}
+									<img class="flavor-img" src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/RR-reskin-lab_testing_AST_UF_tag.svg?v=1658945052">
+								{% endif %}
+								
+							</div>
+	   
+							<div class="spectrum-wrapper">
+								{% if product.tags contains 'full-spectrum' %}
+									<div class="meta-wrapper no-padding center">
+										<div class="green-square"></div>
+										<h5 class="sk-product-section-meta-heading">Full Spectrum</h5>
+									</div>
+								{% endif %}
+								{% if product.tags contains 'broad-spectrum' %}
+									<div class="meta-wrapper no-padding center">
+										<div class="orange-square"></div>
+										<h5 class="sk-product-section-meta-heading">Broad Spectrum</h5>
+									</div>
+								{% endif %}
+								{% if product.tags contains 'for-pets' %}
+									<div class="meta-wrapper no-padding center">
+										<div class="blue-square"></div>
+										<h5 class="sk-product-section-meta-heading">For Pets</h5>
+									</div>
+								{% endif %}
+							</div>
+
+							{% if product.id == 7706902626502 %}
+								<div class="jc-product-section-text-collection-custom min-h-50">{{ shortDescription.description }}</div>
+							{% else %}
+								{% if product.id == 4453931843637 or product.id == 3775015878709 %}
+									<div class="jc-product-section-text-collection-custom"><p>1000mg • 2500mg • 5000mg<br>3-Packs</p></div>
+									{%else%}
+									<div class="jc-product-section-text-collection-custom">{{ shortDescription.description }}</div>
+								{% endif %}
+							{% endif %}
+	   
+
+							<div class="jc-medium-btn-section"><a href="{{ product.url }}" class="jc-small-btn w-button full" data-ix="shop-btn">Shop Now</a></div>
+
+
+	    	              </div>
+	    	            </div>
+	    	          </div>
+
+
+	    	        {% endfor %}
+
+	    	        {% comment %}
+					Gummies - 276663304390
+	    	       
+
+
+	    	        {% if collection.id == 276663304390 %}
+	    	        	
+	    	        	<div class="jc-products-flex-col jc-products-flex-col-custom">
+
+	    	        		<div class="jc-product-section-col-inner">
+	    	        		  <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-overlay-link w-inline-block" target="_blank">
+	    	        		  </a>
+	    	        		    <div class="jc-product-section-img-wrapper collection jc-product-section-img-wrapper collection-home-delta-8"></div>
+	    	        		    <div class="jc-product-section-bottom-wrapper">
+	    	        		    <div class="jc-product-section-breaker-wrapper">
+	    	        		      <div class="jc-product-section-hr"></div>
+	    	        		      <div class="jc-product-section-hr jc-product-section-sub-hr"></div>
+	    	        		    </div>
+	    	        		    <h4 class="jc-product-section-heading jc-product-section-heading-margin">Delta-8 THC</h4>
+	    	        		    <div class="jc-product-section-btn-wrapper">
+	    	        		      <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+	    	        		        <p class="jc-product-section-link-text">Shop Now</p>
+
+	    	        		      </a>
+	    	        		    </div>
+	    	        		  </div>
+	    	        		</div>
+	    	        		
+	    	        	</div>
+
+	    	        	<div class="jc-products-flex-col jc-products-flex-col-custom">
+
+	    	        		<div class="jc-product-section-col-inner">
+	    	        		  <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-product-section-overlay-link w-inline-block" target="_blank">
+	    	        		  </a>
+	    	        		    <div class="jc-product-section-img-wrapper collection jc-product-section-img-wrapper collection-home-delta-9"></div>
+	    	        		    <div class="jc-product-section-bottom-wrapper">
+	    	        		    <div class="jc-product-section-breaker-wrapper">
+	    	        		      <div class="jc-product-section-hr"></div>
+	    	        		      <div class="jc-product-section-hr jc-product-section-sub-hr"></div>
+	    	        		    </div>
+	    	        		    <h4 class="jc-product-section-heading jc-product-section-heading-margin">Delta-9 THC</h4>
+	    	        		    <div class="jc-product-section-btn-wrapper">
+	    	        		      <a href="https://summitthc.com/products/15mg-20ct-delta-9-vegan-infused-gummies" class="jc-product-section-link-block w-inline-block" data-ix="shop-btn" target="_blank">
+	    	        		        <p class="jc-product-section-link-text">Shop Now</p>
+
+	    	        		      </a>
+	    	        		    </div>
+	    	        		  </div>
+	    	        		</div>
+
+	    	        	</div>
+
+
+	    	        {% endif %}
+	    	        
+{% endcomment %}
+
+
+	    	</div>
+
+	    </div>
+	    {% comment %}
+	    {% if collection.id == 158116937781  %}
+	    	<div class="jc-custom-collection-bottom-section">
+	    		<div class="jc-container-mid">
+	    			<p class="jc-custom-collection-bottom-text">Looking for our Pet Tincture? Click <a href="/products/pet-tincture" class="jc-custom-collection-bottom-text-link">here</a></p>
+	    		</div>
+	    	</div>
+	    {% endif %}
+	    {% endcomment %}
+	    
+	    <div class="jc-disclaimer-wrapper-products grey">
+	      {% section 'jc-disclaimer-grey' %}
+	    </div>
+	    
+	  </div>
+
+
+	  <style type="text/css">
+
+	  #jc-nav-link-products {
+
+	    color:#7a0805;
+
+	  }
+
+	  @media (max-width: 991px) { 
+	    #jc-nav-link-products {
+
+	      color:#ffffff;
+
+	    }
+	  }
+
+	  </style>

@@ -1,0 +1,44 @@
+<div id="delta-8-modal" class="leaving-site-background">
+    <div class="leaving-wrapper">
+      <a href="#" class="leaving-close w-inline-block"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/SS_close_icon.svg?v=1663607092" loading="lazy" alt="" class="close-img"></a>
+      <div class="leaving-left"></div>
+      <div class="leaving-right"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/SM_Logo.svg?v=1663607091" loading="lazy" alt="" class="leaving-logo">
+        <h1>You&#x27;re about to leave R&amp;R to visit our sister brand, Summit THC.</h1>
+        <p>Explore and shop Delta-9, HHC, and Delta-8 products.</p>
+        <div class="leaving-button-wrapper">
+          <a href="https://summitthc.com/products/25mg-30ct-delta-8-vegan-infused-gummies" target="_blank" class="arrow-gif-wrapper"><img src="https://cdn.shopify.com/s/files/1/0107/7431/5072/files/SM-Arrow.gif" loading="lazy" alt=""></a>
+          <a href="#" id="continue-shoping" class="jc-small-btn product-row w-button leaving-button w-button">I want to keep shopping for R&amp;R CBD</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    $(document).ready(function() {
+
+      $('.delta-8-btn').click(function(e) {
+        $("#delta-8-modal").addClass("show");
+        $("body").addClass("no-scroll");
+      });
+
+      $('.leaving-close').click(function(e) {
+        $("#delta-8-modal").removeClass("show");
+        $("body").removeClass("no-scroll");
+      });
+
+      $('.leaving-site-background').click(function(e) {
+        $("#delta-8-modal").removeClass("show");
+        $("body").removeClass("no-scroll");
+      });
+
+      $('#continue-shoping').click(function(e) {
+        $("#delta-8-modal").removeClass("show");
+        $("body").removeClass("no-scroll");
+      });
+
+
+    });
+
+  </script>
