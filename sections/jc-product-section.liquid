@@ -1,3 +1,4 @@
+{{ 'jc-custom-recharge.css' | asset_url | stylesheet_tag }}
 <div class="jc-product-page-wrapper" itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product-template"  data-enable-history-state="true" >
 
 	<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
@@ -582,12 +583,181 @@
 								THC-Free Gummies 6841769033926
 								{%endcomment%}
 								{% if product.available %}
-									<div class="radio-wrapper js product-form__item jc-product-page-flex-row">
+									<div class="radio-wrapper js product-form__item jc-product-page-flex-row subscription-flex">
 										<div class="jc-product-page-flex-col jc-product-page-flex-col-heading subscription">
 											<label class="jc-product-page-col-heading single-option-radio__label purchase"
 											  for="ProductSelect-option-purchase">
 											  Purchase
 											</label>
+											
+											{% comment %} Custom Recharge Widget {% endcomment %}
+											<div class="jc-custom-rc-container">
+												<label class="jc-custom-rc-radio jc-custom-subsave" for="custom-rc-radio-subscribe-save">
+													<input type="radio" class="jc-custom-rc-radio__input" name="custom-rc-radio" id="custom-rc-radio-subscribe-save" value="subsave" checked>
+													<div class="jc-custom-ra-radio-wrapper">
+														<div class="jc-custom-rc-radio__label">
+															<div class="jc-custom-rc-radio__text">
+																<h3 class="jc-custom-rc__label-heading">
+																	Subscribe & Save 20%
+																</h3>
+																<p class="jc-custom-rc__label-text">
+																	Free shipping. Cancel Anytime.
+																</p>
+															</div>
+															<div class="jc-custom-rc-radio__price">
+																<div class="jc-custom-rc__price-box">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | times: 0.8 | money  }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	Save 20%
+																</div>
+															</div>
+														</div>
+														<div class="jc-custom-rc-radio__packs jc-custom-rc-radio__hidden">
+															<div class="jc-custom-rc-radio__pack-item active" data-pack="1">
+																<div class="pack-label">
+																	1 - PACK
+																</div>
+																<div class="pack-price">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | times: 0.8 | money }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	Save 20%
+																</div>
+															</div>
+															<div class="jc-custom-rc-radio__pack-item" data-pack="2">
+																<div class="pack-label">
+																	2 - PACK
+																</div>
+																<div class="pack-price">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price  | money }}
+																	</span>
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | times: 0.8 | money }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	Save 20%
+																</div>
+															</div>
+															<div class="jc-custom-rc-radio__pack-item" data-pack="3">
+																<div class="pack-label">
+																	3 - PACK
+																</div>
+																<div class="pack-price">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | times: 0.8 | money }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	Save 20%
+																</div>
+															</div>
+														</div>
+														<div class="jc-custom-rc-radio__plans jc-custom-rc-radio__hidden">
+															<div class="jc-custom-rc-radio__plan-label">
+																Deliver every:
+															</div>
+															<div class="jc-custom-rc-radio__plan-item active" data-plan="0">
+																30 Days
+															</div>
+															<div class="jc-custom-rc-radio__plan-item" data-plan="1">
+																60 Days
+															</div>
+															<div class="jc-custom-rc-radio__plan-item" data-plan="2">
+																90 Days
+															</div>
+														</div>
+														<div class="jc-custom-rc-radio__popup jc-custom-rc-radio__hidden">
+															Skip or cancel at any time. <a class="jc-custom-rc-radio__popup-link">Learn More<span class="jc-custom-rc-radio__popup-content">Subscribe & Save delivers CBD refills automatically and on your schedule. Swap products, skip orders, or cancel any time–plus enjoy free shipping on U.S. orders.</span></a>
+														</div>
+													</div>
+												</label>
+												<label class="jc-custom-rc-radio jc-custom-onetime" for="custom-rc-radio-one-time">
+													<input type="radio" class="jc-custom-rc-radio__input" name="custom-rc-radio" id="custom-rc-radio-one-time" value="onetime">
+													<div class="jc-custom-ra-radio-wrapper">
+														<div class="jc-custom-rc-radio__label">
+															<div class="jc-custom-rc-radio__text">
+																<h3 class="jc-custom-rc__label-heading">
+																	One-Time Purchase
+																</h3>
+																<p class="jc-custom-rc__label-text">
+																	Free U.S. Shipping Over $60
+																</p>
+															</div>
+															<div class="jc-custom-rc-radio__price">
+																<div class="jc-custom-rc__price-box">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																</div>
+															</div>
+														</div>
+														<div class="jc-custom-rc-radio__packs jc-custom-rc-radio__hidden">
+															<div class="jc-custom-rc-radio__pack-item no-discount active" data-pack="1">
+																<div class="pack-label">
+																	1 - PACK
+																</div>
+																<div class="pack-price">
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	No Discount
+																</div>
+															</div>
+															<div class="jc-custom-rc-radio__pack-item" data-pack="2">
+																<div class="pack-label">
+																	2 - PACK
+																</div>
+																<div class="pack-price">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | times: 0.9 | money }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	Save 10%
+																</div>
+															</div>
+															<div class="jc-custom-rc-radio__pack-item" data-pack="3">
+																<div class="pack-label">
+																	3 - PACK
+																</div>
+																<div class="pack-price">
+																	<span class="jc-custom-rc__compare-price">
+																		{{ current_variant.price | money }}
+																	</span>
+																	<span class="jc-custom-rc__sale-price">
+																		{{ current_variant.price | times: 0.75 | money }}
+																	</span>
+																</div>
+																<div class="jc-custom-rc__save-price">
+																	Save 15%
+																</div>
+															</div>
+														</div>
+													</div>
+												</label>
+											</div>
+											{% comment %} Custom Recharge Widget {% endcomment %}
 
 											<div class="rc-widget-injection-parent"></div>
 
@@ -1470,3 +1640,4 @@
 	
 </script>
 {%- endcomment -%}
+<script src="{{ 'jc-custom-recharge.js' | asset_url }}" defer="defer"></script>
